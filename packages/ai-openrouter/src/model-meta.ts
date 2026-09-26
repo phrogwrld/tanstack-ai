@@ -88,11 +88,11 @@ const _ANTHROPIC_CLAUDE_OPUS_LATEST = {
   pricing: {
     text: {
       input: {
-        normal: 5,
-        cached: 6.75,
+        normal: 4,
+        cached: 5.2,
       },
       output: {
-        normal: 25,
+        normal: 20,
       },
     },
     image: 0,
@@ -151,15 +151,15 @@ const _DEEPSEEK_DEEPSEEK_FLASH_LATEST = {
     ],
   },
   context_window: 1048576,
-  max_output_tokens: 943718,
+  max_output_tokens: 384000,
   pricing: {
     text: {
       input: {
-        normal: 0.12,
-        cached: 0.0036,
+        normal: 0.035,
+        cached: 0.001,
       },
       output: {
-        normal: 0.48,
+        normal: 0.29,
       },
     },
     image: 0,
@@ -188,15 +188,15 @@ const _DEEPSEEK_DEEPSEEK_PRO_LATEST = {
     ],
   },
   context_window: 1048576,
-  max_output_tokens: 384000,
+  max_output_tokens: 393216,
   pricing: {
     text: {
       input: {
-        normal: 0.59862,
-        cached: 0.019954,
+        normal: 0.24948,
+        cached: 0.007938,
       },
       output: {
-        normal: 1.79586,
+        normal: 0.74844,
       },
     },
     image: 0,
@@ -230,11 +230,11 @@ const _DEEPSEEK_DEEPSEEK_V4_FLASH_LATEST = {
   pricing: {
     text: {
       input: {
-        normal: 0.03,
-        cached: 0.008,
+        normal: 0.021,
+        cached: 0.016,
       },
       output: {
-        normal: 1,
+        normal: 0.32,
       },
     },
     image: 0,
@@ -331,11 +331,11 @@ const _MOONSHOTAI_KIMI_LATEST = {
   pricing: {
     text: {
       input: {
-        normal: 1.5,
-        cached: 0.15,
+        normal: 1.0301,
+        cached: 0.3,
       },
       output: {
-        normal: 7.5,
+        normal: 9.043,
       },
     },
     image: 0,
@@ -391,11 +391,11 @@ const _OPENAI_GPT_LUNA_LATEST = {
   pricing: {
     text: {
       input: {
-        normal: 0.2,
-        cached: 0.27,
+        normal: 0.1,
+        cached: 0.135,
       },
       output: {
-        normal: 1.2,
+        normal: 0.5,
       },
     },
     image: 0,
@@ -548,15 +548,15 @@ const _Z_AI_GLM_FLASH_LATEST = {
     ],
   },
   context_window: 1310720,
-  max_output_tokens: 943718,
+  max_output_tokens: 131072,
   pricing: {
     text: {
       input: {
-        normal: 0.075,
+        normal: 0.04,
         cached: 0.015,
       },
       output: {
-        normal: 0.25,
+        normal: 0.5,
       },
     },
     image: 0,
@@ -586,15 +586,15 @@ const _Z_AI_GLM_LATEST = {
     ],
   },
   context_window: 1310720,
-  max_output_tokens: 943718,
+  max_output_tokens: 131072,
   pricing: {
     text: {
       input: {
-        normal: 0.6545,
-        cached: 0.107525,
+        normal: 0.3794,
+        cached: 0.07046,
       },
       output: {
-        normal: 2.057,
+        normal: 1.1924,
       },
     },
     image: 0,
@@ -676,6 +676,66 @@ const AION_LABS_AION_3_0_MINI = {
     ],
   },
   context_window: 131072,
+  max_output_tokens: 32768,
+  pricing: {
+    text: {
+      input: {
+        normal: 0.7,
+        cached: 0.18,
+      },
+      output: {
+        normal: 1.4,
+      },
+    },
+    image: 0,
+  },
+} as const
+const AION_LABS_AION_3_5 = {
+  id: 'aion-labs/aion-3.5',
+  name: 'AionLabs: Aion 3.5',
+  supports: {
+    input: ['text'],
+    output: ['text'],
+    supports: [
+      'maxCompletionTokens',
+      'reasoning',
+      'responseFormat',
+      'temperature',
+      'toolChoice',
+      'topP',
+    ],
+  },
+  context_window: 262144,
+  max_output_tokens: 32768,
+  pricing: {
+    text: {
+      input: {
+        normal: 3,
+        cached: 0.75,
+      },
+      output: {
+        normal: 6,
+      },
+    },
+    image: 0,
+  },
+} as const
+const AION_LABS_AION_3_5_MINI = {
+  id: 'aion-labs/aion-3.5-mini',
+  name: 'AionLabs: Aion 3.5 Mini',
+  supports: {
+    input: ['text'],
+    output: ['text'],
+    supports: [
+      'maxCompletionTokens',
+      'reasoning',
+      'responseFormat',
+      'temperature',
+      'toolChoice',
+      'topP',
+    ],
+  },
+  context_window: 262144,
   max_output_tokens: 32768,
   pricing: {
     text: {
@@ -865,35 +925,6 @@ const ANTHRACITE_ORG_MAGNUM_V4_72B = {
       },
       output: {
         normal: 5,
-      },
-    },
-    image: 0,
-  },
-} as const
-const ANTHROPIC_CLAUDE_3_HAIKU = {
-  id: 'anthropic/claude-3-haiku',
-  name: 'Anthropic: Claude 3 Haiku',
-  supports: {
-    input: ['text', 'image'],
-    output: ['text'],
-    supports: [
-      'maxCompletionTokens',
-      'stop',
-      'temperature',
-      'toolChoice',
-      'topP',
-    ],
-  },
-  context_window: 200000,
-  max_output_tokens: 4096,
-  pricing: {
-    text: {
-      input: {
-        normal: 0.25,
-        cached: 0.32999999999999996,
-      },
-      output: {
-        normal: 1.25,
       },
     },
     image: 0,
@@ -1438,6 +1469,66 @@ const ANTHROPIC_CLAUDE_OPUS_5_BATCH = {
       },
       output: {
         normal: 12.5,
+      },
+    },
+    image: 0,
+  },
+} as const
+const ANTHROPIC_CLAUDE_OPUS_5_5 = {
+  id: 'anthropic/claude-opus-5.5',
+  name: 'Anthropic: Claude Opus 5.5',
+  supports: {
+    input: ['text', 'image', 'document'],
+    output: ['text'],
+    supports: [
+      'maxCompletionTokens',
+      'maxCompletionTokens',
+      'reasoning',
+      'responseFormat',
+      'stop',
+      'temperature',
+      'toolChoice',
+    ],
+  },
+  context_window: 1000000,
+  max_output_tokens: 128000,
+  pricing: {
+    text: {
+      input: {
+        normal: 4,
+        cached: 5.2,
+      },
+      output: {
+        normal: 20,
+      },
+    },
+    image: 0,
+  },
+} as const
+const ANTHROPIC_CLAUDE_OPUS_5_5_BATCH = {
+  id: 'anthropic/claude-opus-5.5:batch',
+  name: 'Anthropic: Claude Opus 5.5 (batch)',
+  supports: {
+    input: ['text', 'image', 'document'],
+    output: ['text'],
+    supports: [
+      'maxCompletionTokens',
+      'reasoning',
+      'responseFormat',
+      'stop',
+      'toolChoice',
+    ],
+  },
+  context_window: 1000000,
+  max_output_tokens: 128000,
+  pricing: {
+    text: {
+      input: {
+        normal: 2,
+        cached: 2.6,
+      },
+      output: {
+        normal: 10,
       },
     },
     image: 0,
@@ -2008,6 +2099,39 @@ const COHERE_COMMAND_A = {
     image: 0,
   },
 } as const
+const COHERE_COMMAND_A_PLUS = {
+  id: 'cohere/command-a-plus',
+  name: 'Cohere: Command A+',
+  supports: {
+    input: ['text', 'image'],
+    output: ['text'],
+    supports: [
+      'frequencyPenalty',
+      'maxCompletionTokens',
+      'presencePenalty',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'stop',
+      'temperature',
+      'topP',
+    ],
+  },
+  context_window: 192000,
+  max_output_tokens: 64000,
+  pricing: {
+    text: {
+      input: {
+        normal: 0.3,
+        cached: 0.15,
+      },
+      output: {
+        normal: 1.5,
+      },
+    },
+    image: 0,
+  },
+} as const
 const COHERE_COMMAND_R_08_2024 = {
   id: 'cohere/command-r-08-2024',
   name: 'Cohere: Command R (08-2024)',
@@ -2486,11 +2610,11 @@ const DEEPSEEK_DEEPSEEK_V4_FLASH = {
   pricing: {
     text: {
       input: {
-        normal: 0.088606,
-        cached: 0.0177212,
+        normal: 0.04704,
+        cached: 0.009408,
       },
       output: {
-        normal: 0.177212,
+        normal: 0.09408,
       },
     },
     image: 0,
@@ -2524,47 +2648,11 @@ const DEEPSEEK_DEEPSEEK_V4_FLASH_0731 = {
   pricing: {
     text: {
       input: {
-        normal: 0.04,
+        normal: 0.021,
         cached: 0.016,
       },
       output: {
-        normal: 0.64,
-      },
-    },
-    image: 0,
-  },
-} as const
-const DEEPSEEK_DEEPSEEK_V4_FLASH_0731_BATCH = {
-  id: 'deepseek/deepseek-v4-flash-0731:batch',
-  name: 'DeepSeek: DeepSeek V4 Flash 0731 (batch)',
-  supports: {
-    input: ['text'],
-    output: ['text'],
-    supports: [
-      'frequencyPenalty',
-      'logitBias',
-      'logprobs',
-      'maxCompletionTokens',
-      'presencePenalty',
-      'reasoning',
-      'responseFormat',
-      'stop',
-      'temperature',
-      'toolChoice',
-      'topLogprobs',
-      'topP',
-    ],
-  },
-  context_window: 1048576,
-  max_output_tokens: 943718,
-  pricing: {
-    text: {
-      input: {
-        normal: 0.11,
-        cached: 0.0035,
-      },
-      output: {
-        normal: 0.33,
+        normal: 0.32,
       },
     },
     image: 0,
@@ -2607,42 +2695,6 @@ const DEEPSEEK_DEEPSEEK_V4_FLASH_VISION_EXP = {
     image: 0,
   },
 } as const
-const DEEPSEEK_DEEPSEEK_V4_FLASH_VISION_EXP_BATCH = {
-  id: 'deepseek/deepseek-v4-flash-vision-exp:batch',
-  name: 'DeepSeek: DeepSeek V4 Flash Vision Exp (batch)',
-  supports: {
-    input: ['text', 'image'],
-    output: ['text'],
-    supports: [
-      'frequencyPenalty',
-      'logitBias',
-      'logprobs',
-      'maxCompletionTokens',
-      'presencePenalty',
-      'reasoning',
-      'responseFormat',
-      'stop',
-      'temperature',
-      'toolChoice',
-      'topLogprobs',
-      'topP',
-    ],
-  },
-  context_window: 1048576,
-  max_output_tokens: 943718,
-  pricing: {
-    text: {
-      input: {
-        normal: 0.11,
-        cached: 0.0035,
-      },
-      output: {
-        normal: 0.33,
-      },
-    },
-    image: 0,
-  },
-} as const
 const DEEPSEEK_DEEPSEEK_V4_PRO = {
   id: 'deepseek/deepseek-v4-pro',
   name: 'DeepSeek: DeepSeek V4 Pro 0423',
@@ -2671,11 +2723,11 @@ const DEEPSEEK_DEEPSEEK_V4_PRO = {
   pricing: {
     text: {
       input: {
-        normal: 0.95526,
-        cached: 0.079605,
+        normal: 0.368184,
+        cached: 0.030682,
       },
       output: {
-        normal: 1.91052,
+        normal: 0.736368,
       },
     },
     image: 0,
@@ -2708,47 +2760,11 @@ const DEEPSEEK_DEEPSEEK_V4_PRO_0813 = {
   pricing: {
     text: {
       input: {
-        normal: 0.59862,
-        cached: 0.019954,
+        normal: 0.264,
+        cached: 0.0088,
       },
       output: {
-        normal: 1.79586,
-      },
-    },
-    image: 0,
-  },
-} as const
-const DEEPSEEK_DEEPSEEK_V4_PRO_0813_BATCH = {
-  id: 'deepseek/deepseek-v4-pro-0813:batch',
-  name: 'DeepSeek: DeepSeek V4 Pro 0813 (batch)',
-  supports: {
-    input: ['text'],
-    output: ['text'],
-    supports: [
-      'frequencyPenalty',
-      'logitBias',
-      'logprobs',
-      'maxCompletionTokens',
-      'presencePenalty',
-      'reasoning',
-      'responseFormat',
-      'stop',
-      'temperature',
-      'toolChoice',
-      'topLogprobs',
-      'topP',
-    ],
-  },
-  context_window: 1048576,
-  max_output_tokens: 943718,
-  pricing: {
-    text: {
-      input: {
-        normal: 0.66,
-        cached: 0.022,
-      },
-      output: {
-        normal: 1.98,
+        normal: 0.792,
       },
     },
     image: 0,
@@ -2777,15 +2793,50 @@ const DEEPSEEK_DEEPSEEK_V4_1_FLASH = {
     ],
   },
   context_window: 1048576,
-  max_output_tokens: 384000,
+  max_output_tokens: 943718,
   pricing: {
     text: {
       input: {
-        normal: 0.15,
-        cached: 0.003,
+        normal: 0.3,
+        cached: 0.006,
       },
       output: {
-        normal: 0.6,
+        normal: 1.2,
+      },
+    },
+    image: 0,
+  },
+} as const
+const DEEPSEEK_DEEPSEEK_V4_1_FLASH_BATCH = {
+  id: 'deepseek/deepseek-v4.1-flash:batch',
+  name: 'DeepSeek: DeepSeek V4.1 Flash (batch)',
+  supports: {
+    input: ['text', 'image'],
+    output: ['text'],
+    supports: [
+      'frequencyPenalty',
+      'logitBias',
+      'maxCompletionTokens',
+      'presencePenalty',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'stop',
+      'temperature',
+      'toolChoice',
+      'topP',
+    ],
+  },
+  context_window: 1048576,
+  max_output_tokens: 131072,
+  pricing: {
+    text: {
+      input: {
+        normal: 0.112,
+        cached: 0.00336,
+      },
+      output: {
+        normal: 0.336,
       },
     },
     image: 0,
@@ -2816,6 +2867,42 @@ const DOTS_STUDIO_DOTS_3_NOTE_PREVIEW_FREE = {
       },
       output: {
         normal: 0,
+      },
+    },
+    image: 0,
+  },
+} as const
+const FIREWORKS_EMBER_1 = {
+  id: 'fireworks/ember-1',
+  name: 'Fireworks: Ember-1',
+  supports: {
+    input: ['text', 'image'],
+    output: ['text'],
+    supports: [
+      'frequencyPenalty',
+      'logitBias',
+      'logprobs',
+      'maxCompletionTokens',
+      'presencePenalty',
+      'reasoning',
+      'responseFormat',
+      'stop',
+      'temperature',
+      'toolChoice',
+      'topLogprobs',
+      'topP',
+    ],
+  },
+  context_window: 1048576,
+  max_output_tokens: 943718,
+  pricing: {
+    text: {
+      input: {
+        normal: 3,
+        cached: 0.3,
+      },
+      output: {
+        normal: 15,
       },
     },
     image: 0,
@@ -3956,11 +4043,11 @@ const GOOGLE_GEMMA_4_26B_A4B_IT = {
   pricing: {
     text: {
       input: {
-        normal: 0.09,
-        cached: 0.05,
+        normal: 0.0675,
+        cached: 0.0375,
       },
       output: {
-        normal: 0.3,
+        normal: 0.225,
       },
     },
     image: 0,
@@ -4440,44 +4527,11 @@ const INCLUSIONAI_LING_3_0_FLASH_VL = {
     supports: [
       'frequencyPenalty',
       'logitBias',
-      'maxCompletionTokens',
-      'presencePenalty',
-      'reasoning',
-      'responseFormat',
-      'seed',
-      'stop',
-      'temperature',
-      'toolChoice',
-      'topP',
-    ],
-  },
-  context_window: 131072,
-  max_output_tokens: 32768,
-  pricing: {
-    text: {
-      input: {
-        normal: 0.06,
-        cached: 0.012,
-      },
-      output: {
-        normal: 0.18,
-      },
-    },
-    image: 0,
-  },
-} as const
-const INCLUSIONAI_LING_3_0_FLASH_VL_FREE = {
-  id: 'inclusionai/ling-3.0-flash-vl:free',
-  name: 'inclusionAI: Ling 3.0 Flash VL (free)',
-  supports: {
-    input: ['text', 'image', 'video'],
-    output: ['text'],
-    supports: [
-      'frequencyPenalty',
       'logprobs',
       'maxCompletionTokens',
       'presencePenalty',
       'reasoning',
+      'responseFormat',
       'seed',
       'stop',
       'temperature',
@@ -4491,11 +4545,11 @@ const INCLUSIONAI_LING_3_0_FLASH_VL_FREE = {
   pricing: {
     text: {
       input: {
-        normal: 0,
-        cached: 0,
+        normal: 0.021,
+        cached: 0.0042,
       },
       output: {
-        normal: 0,
+        normal: 0.0616,
       },
     },
     image: 0,
@@ -4620,6 +4674,7 @@ const LIQUID_LFM_2_5_2_6B_FREE = {
       'temperature',
       'toolChoice',
       'topLogprobs',
+      'topP',
     ],
   },
   context_window: 65536,
@@ -5017,42 +5072,6 @@ const META_MUSE_GLIMMER_30B = {
     image: 0,
   },
 } as const
-const META_MUSE_GLIMMER_30B_BATCH = {
-  id: 'meta/muse-glimmer-30b:batch',
-  name: 'Meta: Muse Glimmer 30B (batch)',
-  supports: {
-    input: ['text', 'image'],
-    output: ['text'],
-    supports: [
-      'frequencyPenalty',
-      'logitBias',
-      'logprobs',
-      'maxCompletionTokens',
-      'presencePenalty',
-      'reasoning',
-      'responseFormat',
-      'stop',
-      'temperature',
-      'toolChoice',
-      'topLogprobs',
-      'topP',
-    ],
-  },
-  context_window: 131072,
-  max_output_tokens: 117964,
-  pricing: {
-    text: {
-      input: {
-        normal: 0.175,
-        cached: 0.02,
-      },
-      output: {
-        normal: 0.75,
-      },
-    },
-    image: 0,
-  },
-} as const
 const META_MUSE_SPARK_1_1 = {
   id: 'meta/muse-spark-1.1',
   name: 'Meta: Muse Spark 1.1',
@@ -5346,15 +5365,15 @@ const MINIMAX_MINIMAX_M2 = {
     ],
   },
   context_window: 204800,
-  max_output_tokens: 131072,
+  max_output_tokens: 176947,
   pricing: {
     text: {
       input: {
-        normal: 0.255,
+        normal: 0.3,
         cached: 0,
       },
       output: {
-        normal: 1.02,
+        normal: 1.2,
       },
     },
     image: 0,
@@ -5820,6 +5839,39 @@ const MISTRALAI_MISTRAL_LARGE_2407 = {
       },
       output: {
         normal: 6,
+      },
+    },
+    image: 0,
+  },
+} as const
+const MISTRALAI_MISTRAL_LARGE_2512 = {
+  id: 'mistralai/mistral-large-2512',
+  name: 'Mistral: Mistral Large 3 2512',
+  supports: {
+    input: ['text', 'image', 'document'],
+    output: ['text'],
+    supports: [
+      'frequencyPenalty',
+      'maxCompletionTokens',
+      'presencePenalty',
+      'responseFormat',
+      'seed',
+      'stop',
+      'temperature',
+      'toolChoice',
+      'topP',
+    ],
+  },
+  context_window: 262144,
+  max_output_tokens: 209715,
+  pricing: {
+    text: {
+      input: {
+        normal: 0.5,
+        cached: 0.05,
+      },
+      output: {
+        normal: 1.5,
       },
     },
     image: 0,
@@ -6536,11 +6588,11 @@ const MOONSHOTAI_KIMI_K2_7_CODE = {
   pricing: {
     text: {
       input: {
-        normal: 0.7062,
+        normal: 0.6562,
         cached: 0.18,
       },
       output: {
-        normal: 3.21,
+        normal: 3.3,
       },
     },
     image: 0,
@@ -6578,6 +6630,41 @@ const MOONSHOTAI_KIMI_K3 = {
       },
       output: {
         normal: 15,
+      },
+    },
+    image: 0,
+  },
+} as const
+const MOONSHOTAI_KIMI_K3_BATCH = {
+  id: 'moonshotai/kimi-k3:batch',
+  name: 'MoonshotAI: Kimi K3 (batch)',
+  supports: {
+    input: ['text', 'image', 'video'],
+    output: ['text'],
+    supports: [
+      'frequencyPenalty',
+      'logitBias',
+      'maxCompletionTokens',
+      'presencePenalty',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'stop',
+      'temperature',
+      'toolChoice',
+      'topP',
+    ],
+  },
+  context_window: 1048576,
+  max_output_tokens: 16384,
+  pricing: {
+    text: {
+      input: {
+        normal: 2.28,
+        cached: 0.228,
+      },
+      output: {
+        normal: 11.4,
       },
     },
     image: 0,
@@ -6631,131 +6718,6 @@ const MORPH_MORPH_V3_LARGE = {
       },
       output: {
         normal: 1.9,
-      },
-    },
-    image: 0,
-  },
-} as const
-const NEX_AGI_NEX_N2_5_MINI = {
-  id: 'nex-agi/nex-n2.5-mini',
-  name: 'Nex AGI: Nex-N2.5-Mini',
-  supports: {
-    input: ['text', 'image'],
-    output: ['text'],
-    supports: [
-      'logprobs',
-      'maxCompletionTokens',
-      'reasoning',
-      'temperature',
-      'topLogprobs',
-      'topP',
-    ],
-  },
-  context_window: 262144,
-  max_output_tokens: 235929,
-  pricing: {
-    text: {
-      input: {
-        normal: 0.025,
-        cached: 0.0025,
-      },
-      output: {
-        normal: 0.1,
-      },
-    },
-    image: 0,
-  },
-} as const
-const NEX_AGI_NEX_N2_5_MINI_FREE = {
-  id: 'nex-agi/nex-n2.5-mini:free',
-  name: 'Nex AGI: Nex-N2.5-Mini (free)',
-  supports: {
-    input: ['text', 'image'],
-    output: ['text'],
-    supports: [
-      'logprobs',
-      'maxCompletionTokens',
-      'reasoning',
-      'responseFormat',
-      'temperature',
-      'toolChoice',
-      'topLogprobs',
-      'topP',
-    ],
-  },
-  context_window: 262144,
-  max_output_tokens: 235929,
-  pricing: {
-    text: {
-      input: {
-        normal: 0,
-        cached: 0,
-      },
-      output: {
-        normal: 0,
-      },
-    },
-    image: 0,
-  },
-} as const
-const NEX_AGI_NEX_N2_5_PRO = {
-  id: 'nex-agi/nex-n2.5-pro',
-  name: 'Nex AGI: Nex-N2.5-Pro',
-  supports: {
-    input: ['text', 'image'],
-    output: ['text'],
-    supports: [
-      'logprobs',
-      'maxCompletionTokens',
-      'reasoning',
-      'temperature',
-      'toolChoice',
-      'topLogprobs',
-      'topP',
-    ],
-  },
-  context_window: 262144,
-  max_output_tokens: 235929,
-  pricing: {
-    text: {
-      input: {
-        normal: 0.075,
-        cached: 0.015,
-      },
-      output: {
-        normal: 0.25,
-      },
-    },
-    image: 0,
-  },
-} as const
-const NEX_AGI_NEX_N2_5_PRO_FREE = {
-  id: 'nex-agi/nex-n2.5-pro:free',
-  name: 'Nex AGI: Nex-N2.5-Pro (free)',
-  supports: {
-    input: ['text', 'image'],
-    output: ['text'],
-    supports: [
-      'logprobs',
-      'maxCompletionTokens',
-      'reasoning',
-      'responseFormat',
-      'temperature',
-      'toolChoice',
-      'topLogprobs',
-      'topP',
-    ],
-  },
-  context_window: 262144,
-  max_output_tokens: 235929,
-  pricing: {
-    text: {
-      input: {
-        normal: 0,
-        cached: 0,
-      },
-      output: {
-        normal: 0,
       },
     },
     image: 0,
@@ -7141,12 +7103,12 @@ const NVIDIA_NEMOTRON_3_5_LIGHTNING = {
       'topP',
     ],
   },
-  context_window: 262144,
-  max_output_tokens: 235929,
+  context_window: 1000000,
+  max_output_tokens: 131072,
   pricing: {
     text: {
       input: {
-        normal: 0.07,
+        normal: 0.08,
         cached: 0.04,
       },
       output: {
@@ -9461,6 +9423,242 @@ const OPENAI_GPT_6_ASTRA_BATCH = {
     image: 0,
   },
 } as const
+const OPENAI_GPT_6_LUNA = {
+  id: 'openai/gpt-6-luna',
+  name: 'OpenAI: GPT-6 Luna',
+  supports: {
+    input: ['document', 'image', 'text'],
+    output: ['text'],
+    supports: [
+      'maxCompletionTokens',
+      'maxCompletionTokens',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'toolChoice',
+    ],
+  },
+  context_window: 1050000,
+  max_output_tokens: 128000,
+  pricing: {
+    text: {
+      input: {
+        normal: 0.1,
+        cached: 0.135,
+      },
+      output: {
+        normal: 0.5,
+      },
+    },
+    image: 0,
+  },
+} as const
+const OPENAI_GPT_6_LUNA_PRO = {
+  id: 'openai/gpt-6-luna-pro',
+  name: 'OpenAI: GPT-6 Luna Pro',
+  supports: {
+    input: ['document', 'image', 'text'],
+    output: ['text'],
+    supports: [
+      'maxCompletionTokens',
+      'maxCompletionTokens',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'toolChoice',
+    ],
+  },
+  context_window: 1050000,
+  max_output_tokens: 128000,
+  pricing: {
+    text: {
+      input: {
+        normal: 0.1,
+        cached: 0.135,
+      },
+      output: {
+        normal: 0.5,
+      },
+    },
+    image: 0,
+  },
+} as const
+const OPENAI_GPT_6_LUNA_PRO_BATCH = {
+  id: 'openai/gpt-6-luna-pro:batch',
+  name: 'OpenAI: GPT-6 Luna Pro (batch)',
+  supports: {
+    input: ['document', 'image', 'text'],
+    output: ['text'],
+    supports: [
+      'maxCompletionTokens',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'toolChoice',
+    ],
+  },
+  context_window: 1050000,
+  max_output_tokens: 128000,
+  pricing: {
+    text: {
+      input: {
+        normal: 0.05,
+        cached: 0.0675,
+      },
+      output: {
+        normal: 0.25,
+      },
+    },
+    image: 0,
+  },
+} as const
+const OPENAI_GPT_6_LUNA_BATCH = {
+  id: 'openai/gpt-6-luna:batch',
+  name: 'OpenAI: GPT-6 Luna (batch)',
+  supports: {
+    input: ['document', 'image', 'text'],
+    output: ['text'],
+    supports: [
+      'maxCompletionTokens',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'toolChoice',
+    ],
+  },
+  context_window: 1050000,
+  max_output_tokens: 128000,
+  pricing: {
+    text: {
+      input: {
+        normal: 0.05,
+        cached: 0.0675,
+      },
+      output: {
+        normal: 0.25,
+      },
+    },
+    image: 0,
+  },
+} as const
+const OPENAI_GPT_6_SOL = {
+  id: 'openai/gpt-6-sol',
+  name: 'OpenAI: GPT-6 Sol',
+  supports: {
+    input: ['document', 'image', 'text'],
+    output: ['text'],
+    supports: [
+      'maxCompletionTokens',
+      'maxCompletionTokens',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'toolChoice',
+    ],
+  },
+  context_window: 1050000,
+  max_output_tokens: 128000,
+  pricing: {
+    text: {
+      input: {
+        normal: 2,
+        cached: 2.7,
+      },
+      output: {
+        normal: 10,
+      },
+    },
+    image: 0,
+  },
+} as const
+const OPENAI_GPT_6_SOL_PRO = {
+  id: 'openai/gpt-6-sol-pro',
+  name: 'OpenAI: GPT-6 Sol Pro',
+  supports: {
+    input: ['document', 'image', 'text'],
+    output: ['text'],
+    supports: [
+      'maxCompletionTokens',
+      'maxCompletionTokens',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'toolChoice',
+    ],
+  },
+  context_window: 1050000,
+  max_output_tokens: 128000,
+  pricing: {
+    text: {
+      input: {
+        normal: 2,
+        cached: 2.7,
+      },
+      output: {
+        normal: 10,
+      },
+    },
+    image: 0,
+  },
+} as const
+const OPENAI_GPT_6_SOL_PRO_BATCH = {
+  id: 'openai/gpt-6-sol-pro:batch',
+  name: 'OpenAI: GPT-6 Sol Pro (batch)',
+  supports: {
+    input: ['document', 'image', 'text'],
+    output: ['text'],
+    supports: [
+      'maxCompletionTokens',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'toolChoice',
+    ],
+  },
+  context_window: 1050000,
+  max_output_tokens: 128000,
+  pricing: {
+    text: {
+      input: {
+        normal: 1,
+        cached: 1.35,
+      },
+      output: {
+        normal: 5,
+      },
+    },
+    image: 0,
+  },
+} as const
+const OPENAI_GPT_6_SOL_BATCH = {
+  id: 'openai/gpt-6-sol:batch',
+  name: 'OpenAI: GPT-6 Sol (batch)',
+  supports: {
+    input: ['document', 'image', 'text'],
+    output: ['text'],
+    supports: [
+      'maxCompletionTokens',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'toolChoice',
+    ],
+  },
+  context_window: 1050000,
+  max_output_tokens: 128000,
+  pricing: {
+    text: {
+      input: {
+        normal: 1,
+        cached: 1.35,
+      },
+      output: {
+        normal: 5,
+      },
+    },
+    image: 0,
+  },
+} as const
 const OPENAI_GPT_AUDIO = {
   id: 'openai/gpt-audio',
   name: 'OpenAI: GPT Audio',
@@ -9593,6 +9791,41 @@ const OPENAI_GPT_OSS_120B = {
     image: 0,
   },
 } as const
+const OPENAI_GPT_OSS_120B_BATCH = {
+  id: 'openai/gpt-oss-120b:batch',
+  name: 'OpenAI: gpt-oss-120b (batch)',
+  supports: {
+    input: ['text'],
+    output: ['text'],
+    supports: [
+      'frequencyPenalty',
+      'logitBias',
+      'maxCompletionTokens',
+      'presencePenalty',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'stop',
+      'temperature',
+      'toolChoice',
+      'topP',
+    ],
+  },
+  context_window: 131072,
+  max_output_tokens: 117964,
+  pricing: {
+    text: {
+      input: {
+        normal: 0.0296,
+        cached: 0,
+      },
+      output: {
+        normal: 0.136,
+      },
+    },
+    image: 0,
+  },
+} as const
 const OPENAI_GPT_OSS_20B = {
   id: 'openai/gpt-oss-20b',
   name: 'OpenAI: gpt-oss-20b',
@@ -9616,15 +9849,50 @@ const OPENAI_GPT_OSS_20B = {
     ],
   },
   context_window: 131072,
+  max_output_tokens: 32768,
+  pricing: {
+    text: {
+      input: {
+        normal: 0.018,
+        cached: 0,
+      },
+      output: {
+        normal: 0.09,
+      },
+    },
+    image: 0,
+  },
+} as const
+const OPENAI_GPT_OSS_20B_BATCH = {
+  id: 'openai/gpt-oss-20b:batch',
+  name: 'OpenAI: gpt-oss-20b (batch)',
+  supports: {
+    input: ['text'],
+    output: ['text'],
+    supports: [
+      'frequencyPenalty',
+      'logitBias',
+      'maxCompletionTokens',
+      'presencePenalty',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'stop',
+      'temperature',
+      'toolChoice',
+      'topP',
+    ],
+  },
+  context_window: 131072,
   max_output_tokens: 117964,
   pricing: {
     text: {
       input: {
-        normal: 0.03,
-        cached: 0.03,
+        normal: 0.024,
+        cached: 0,
       },
       output: {
-        normal: 0.13,
+        normal: 0.112,
       },
     },
     image: 0,
@@ -9991,6 +10259,37 @@ const PERCEPTRON_PERCEPTRON_MK1 = {
     ],
   },
   context_window: 32768,
+  max_output_tokens: 8192,
+  pricing: {
+    text: {
+      input: {
+        normal: 0.15,
+        cached: 0,
+      },
+      output: {
+        normal: 1.5,
+      },
+    },
+    image: 0,
+  },
+} as const
+const PERCEPTRON_PERCEPTRON_MK1_5 = {
+  id: 'perceptron/perceptron-mk1.5',
+  name: 'Perceptron: Perceptron Mk1.5',
+  supports: {
+    input: ['text', 'image', 'video', 'audio'],
+    output: ['text'],
+    supports: [
+      'frequencyPenalty',
+      'maxCompletionTokens',
+      'presencePenalty',
+      'reasoning',
+      'temperature',
+      'toolChoice',
+      'topP',
+    ],
+  },
+  context_window: 36864,
   max_output_tokens: 8192,
   pricing: {
     text: {
@@ -10686,15 +10985,15 @@ const QWEN_QWEN3_30B_A3B_INSTRUCT_2507 = {
     ],
   },
   context_window: 262144,
-  max_output_tokens: 32000,
+  max_output_tokens: 235929,
   pricing: {
     text: {
       input: {
-        normal: 0.04815,
+        normal: 0.1,
         cached: 0,
       },
       output: {
-        normal: 0.19305,
+        normal: 0.3,
       },
     },
     image: 0,
@@ -11073,12 +11372,12 @@ const QWEN_QWEN3_NEXT_80B_A3B_INSTRUCT = {
     ],
   },
   context_window: 262144,
-  max_output_tokens: 16384,
+  max_output_tokens: 235929,
   pricing: {
     text: {
       input: {
-        normal: 0.09,
-        cached: 0,
+        normal: 0.1,
+        cached: 0.07,
       },
       output: {
         normal: 1.1,
@@ -11217,15 +11516,15 @@ const QWEN_QWEN3_VL_30B_A3B_INSTRUCT = {
     ],
   },
   context_window: 262144,
-  max_output_tokens: 32768,
+  max_output_tokens: 16384,
   pricing: {
     text: {
       input: {
-        normal: 0.13,
+        normal: 0.15,
         cached: 0,
       },
       output: {
-        normal: 0.52,
+        normal: 0.6,
       },
     },
     image: 0,
@@ -11688,15 +11987,15 @@ const QWEN_QWEN3_6_27B = {
     ],
   },
   context_window: 262144,
-  max_output_tokens: 65536,
+  max_output_tokens: 81920,
   pricing: {
     text: {
       input: {
-        normal: 0.3,
-        cached: 0.03,
+        normal: 0.32,
+        cached: 0,
       },
       output: {
-        normal: 2,
+        normal: 3.2,
       },
     },
     image: 0,
@@ -12131,6 +12430,78 @@ const QWEN_QWEN3_8_MAX_0902 = {
     image: 0,
   },
 } as const
+const QWEN_QWEN3_8_MAX_PRIME = {
+  id: 'qwen/qwen3.8-max-prime',
+  name: 'Qwen: Qwen3.8 Max Prime',
+  supports: {
+    input: ['text', 'image', 'video'],
+    output: ['text'],
+    supports: [
+      'frequencyPenalty',
+      'logprobs',
+      'maxCompletionTokens',
+      'presencePenalty',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'stop',
+      'temperature',
+      'toolChoice',
+      'topLogprobs',
+      'topP',
+    ],
+  },
+  context_window: 1000000,
+  max_output_tokens: 131072,
+  pricing: {
+    text: {
+      input: {
+        normal: 4,
+        cached: 0.5,
+      },
+      output: {
+        normal: 12,
+      },
+    },
+    image: 0,
+  },
+} as const
+const QWEN_QWEN3_8_OMNI_FLASH = {
+  id: 'qwen/qwen3.8-omni-flash',
+  name: 'Qwen: Qwen3.8 Omni Flash',
+  supports: {
+    input: ['text', 'image', 'audio', 'video'],
+    output: ['text'],
+    supports: [
+      'frequencyPenalty',
+      'logprobs',
+      'maxCompletionTokens',
+      'presencePenalty',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'stop',
+      'temperature',
+      'toolChoice',
+      'topLogprobs',
+      'topP',
+    ],
+  },
+  context_window: 1000000,
+  max_output_tokens: 131072,
+  pricing: {
+    text: {
+      input: {
+        normal: 0.15,
+        cached: 0.016,
+      },
+      output: {
+        normal: 0.47,
+      },
+    },
+    image: 0,
+  },
+} as const
 const REKAAI_REKA_EDGE = {
   id: 'rekaai/reka-edge',
   name: 'Reka Edge',
@@ -12447,6 +12818,36 @@ const SAO10K_L3_3_EURYALE_70B = {
     image: 0,
   },
 } as const
+const STEALTH_SPACE_BUNNY_ALPHA = {
+  id: 'stealth/space-bunny-alpha',
+  name: 'Space Bunny Alpha',
+  supports: {
+    input: ['text', 'image', 'video'],
+    output: ['text'],
+    supports: [
+      'maxCompletionTokens',
+      'reasoning',
+      'responseFormat',
+      'temperature',
+      'toolChoice',
+      'topP',
+    ],
+  },
+  context_window: 1000000,
+  max_output_tokens: 524288,
+  pricing: {
+    text: {
+      input: {
+        normal: 0,
+        cached: 0,
+      },
+      output: {
+        normal: 0,
+      },
+    },
+    image: 0,
+  },
+} as const
 const STEPFUN_STEP_3_5_FLASH = {
   id: 'stepfun/step-3.5-flash',
   name: 'StepFun: Step 3.5 Flash',
@@ -12703,13 +13104,17 @@ const TENCENT_HY4_PREVIEW = {
     input: ['text'],
     output: ['text'],
     supports: [
+      'frequencyPenalty',
       'maxCompletionTokens',
       'maxCompletionTokens',
+      'presencePenalty',
       'reasoning',
       'responseFormat',
+      'seed',
       'stop',
       'temperature',
       'toolChoice',
+      'topP',
     ],
   },
   context_window: 1048576,
@@ -12850,7 +13255,7 @@ const THINKINGMACHINES_INKLING = {
       'topP',
     ],
   },
-  context_window: 1048576,
+  context_window: 524288,
   max_output_tokens: 471859,
   pricing: {
     text: {
@@ -12874,7 +13279,6 @@ const THINKINGMACHINES_INKLING_SMALL = {
     supports: [
       'frequencyPenalty',
       'logitBias',
-      'logprobs',
       'maxCompletionTokens',
       'presencePenalty',
       'reasoning',
@@ -12882,11 +13286,10 @@ const THINKINGMACHINES_INKLING_SMALL = {
       'stop',
       'temperature',
       'toolChoice',
-      'topLogprobs',
       'topP',
     ],
   },
-  context_window: 1048576,
+  context_window: 524288,
   max_output_tokens: 262144,
   pricing: {
     text: {
@@ -13018,6 +13421,39 @@ const UNDI95_REMM_SLERP_L2_13B = {
       },
       output: {
         normal: 0.65,
+      },
+    },
+    image: 0,
+  },
+} as const
+const UPSTAGE_SOLAR_MINI4 = {
+  id: 'upstage/solar-mini4',
+  name: 'Upstage: Solar Mini 4',
+  supports: {
+    input: ['text'],
+    output: ['text'],
+    supports: [
+      'frequencyPenalty',
+      'maxCompletionTokens',
+      'parallelToolCalls',
+      'presencePenalty',
+      'reasoning',
+      'responseFormat',
+      'temperature',
+      'toolChoice',
+      'topP',
+    ],
+  },
+  context_window: 524288,
+  max_output_tokens: 131072,
+  pricing: {
+    text: {
+      input: {
+        normal: 0.05,
+        cached: 0.005,
+      },
+      output: {
+        normal: 0.2,
       },
     },
     image: 0,
@@ -13456,10 +13892,12 @@ const XIAOMI_MIMO_V2_6_FLASH = {
     output: ['text'],
     supports: [
       'frequencyPenalty',
+      'logitBias',
       'maxCompletionTokens',
       'presencePenalty',
       'reasoning',
       'responseFormat',
+      'seed',
       'stop',
       'temperature',
       'toolChoice',
@@ -13489,17 +13927,19 @@ const XIAOMI_MIMO_V2_6_PRO = {
     output: ['text'],
     supports: [
       'frequencyPenalty',
+      'logitBias',
       'maxCompletionTokens',
       'presencePenalty',
       'reasoning',
       'responseFormat',
+      'seed',
       'stop',
       'temperature',
       'toolChoice',
       'topP',
     ],
   },
-  context_window: 1048576,
+  context_window: 1050000,
   max_output_tokens: 131072,
   pricing: {
     text: {
@@ -13738,11 +14178,11 @@ const Z_AI_GLM_4_7 = {
   pricing: {
     text: {
       input: {
-        normal: 0.4,
-        cached: 0.08,
+        normal: 0.6,
+        cached: 0.11,
       },
       output: {
-        normal: 1.75,
+        normal: 2.2,
       },
     },
     image: 0,
@@ -13874,15 +14314,15 @@ const Z_AI_GLM_5_1 = {
     ],
   },
   context_window: 204800,
-  max_output_tokens: 128000,
+  max_output_tokens: 131072,
   pricing: {
     text: {
       input: {
-        normal: 0.966,
-        cached: 0.1794,
+        normal: 0.9646,
+        cached: 0.17914,
       },
       output: {
-        normal: 3.036,
+        normal: 3.0316,
       },
     },
     image: 0,
@@ -13926,74 +14366,6 @@ const Z_AI_GLM_5_2 = {
     image: 0,
   },
 } as const
-const Z_AI_GLM_5_2_BATCH = {
-  id: 'z-ai/glm-5.2:batch',
-  name: 'Z.ai: GLM 5.2 (batch)',
-  supports: {
-    input: ['text'],
-    output: ['text'],
-    supports: [
-      'frequencyPenalty',
-      'logitBias',
-      'logprobs',
-      'maxCompletionTokens',
-      'presencePenalty',
-      'reasoning',
-      'responseFormat',
-      'stop',
-      'temperature',
-      'toolChoice',
-      'topLogprobs',
-      'topP',
-    ],
-  },
-  context_window: 1048576,
-  max_output_tokens: 943718,
-  pricing: {
-    text: {
-      input: {
-        normal: 0.7,
-        cached: 0.07,
-      },
-      output: {
-        normal: 2.2,
-      },
-    },
-    image: 0,
-  },
-} as const
-const Z_AI_GLM_5_2_FREE = {
-  id: 'z-ai/glm-5.2:free',
-  name: 'Z.ai: GLM 5.2 (free)',
-  supports: {
-    input: ['text'],
-    output: ['text'],
-    supports: [
-      'frequencyPenalty',
-      'maxCompletionTokens',
-      'presencePenalty',
-      'reasoning',
-      'seed',
-      'stop',
-      'temperature',
-      'topP',
-    ],
-  },
-  context_window: 32768,
-  max_output_tokens: 29491,
-  pricing: {
-    text: {
-      input: {
-        normal: 0,
-        cached: 0,
-      },
-      output: {
-        normal: 0,
-      },
-    },
-    image: 0,
-  },
-} as const
 const Z_AI_GLM_5_3 = {
   id: 'z-ai/glm-5.3',
   name: 'Z.ai: GLM 5.3',
@@ -14022,11 +14394,11 @@ const Z_AI_GLM_5_3 = {
   pricing: {
     text: {
       input: {
-        normal: 0.84,
-        cached: 0.156,
+        normal: 0.3794,
+        cached: 0.07046,
       },
       output: {
-        normal: 2.64,
+        normal: 1.1924,
       },
     },
     image: 0,
@@ -14056,12 +14428,12 @@ const Z_AI_GLM_5_3_FLASH = {
     ],
   },
   context_window: 1310720,
-  max_output_tokens: 943718,
+  max_output_tokens: 131072,
   pricing: {
     text: {
       input: {
-        normal: 0.15,
-        cached: 0.05,
+        normal: 0.04,
+        cached: 0.015,
       },
       output: {
         normal: 0.5,
@@ -14079,28 +14451,27 @@ const Z_AI_GLM_5_3_FLASH_BATCH = {
     supports: [
       'frequencyPenalty',
       'logitBias',
-      'logprobs',
       'maxCompletionTokens',
       'presencePenalty',
       'reasoning',
       'responseFormat',
+      'seed',
       'stop',
       'temperature',
       'toolChoice',
-      'topLogprobs',
       'topP',
     ],
   },
   context_window: 1048576,
-  max_output_tokens: 943718,
+  max_output_tokens: 131072,
   pricing: {
     text: {
       input: {
-        normal: 0.075,
-        cached: 0.015,
+        normal: 0.06,
+        cached: 0.012,
       },
       output: {
-        normal: 0.25,
+        normal: 0.2,
       },
     },
     image: 0,
@@ -14127,10 +14498,46 @@ const Z_AI_GLM_5_3_FLASHX = {
     text: {
       input: {
         normal: 0.37,
-        cached: 0.075,
+        cached: 0.09,
       },
       output: {
         normal: 1.25,
+      },
+    },
+    image: 0,
+  },
+} as const
+const Z_AI_GLM_5_3_PRIME = {
+  id: 'z-ai/glm-5.3-prime',
+  name: 'Z.ai: GLM 5.3 Prime',
+  supports: {
+    input: ['text'],
+    output: ['text'],
+    supports: [
+      'frequencyPenalty',
+      'logprobs',
+      'maxCompletionTokens',
+      'presencePenalty',
+      'reasoning',
+      'responseFormat',
+      'seed',
+      'stop',
+      'temperature',
+      'toolChoice',
+      'topLogprobs',
+      'topP',
+    ],
+  },
+  context_window: 1000000,
+  max_output_tokens: 131072,
+  pricing: {
+    text: {
+      input: {
+        normal: 2.8,
+        cached: 0.56,
+      },
+      output: {
+        normal: 8.8,
       },
     },
     image: 0,
@@ -14145,28 +14552,27 @@ const Z_AI_GLM_5_3_BATCH = {
     supports: [
       'frequencyPenalty',
       'logitBias',
-      'logprobs',
       'maxCompletionTokens',
       'presencePenalty',
       'reasoning',
       'responseFormat',
+      'seed',
       'stop',
       'temperature',
       'toolChoice',
-      'topLogprobs',
       'topP',
     ],
   },
   context_window: 1048576,
-  max_output_tokens: 943718,
+  max_output_tokens: 131072,
   pricing: {
     text: {
       input: {
-        normal: 0.7,
-        cached: 0.13,
+        normal: 0.45,
+        cached: 0.1,
       },
       output: {
-        normal: 2.2,
+        normal: 2,
       },
     },
     image: 0,
@@ -14469,6 +14875,26 @@ export type OpenRouterModelOptionsByName = {
       | 'toolChoice'
       | 'topP'
     >
+  [AION_LABS_AION_3_5.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'maxCompletionTokens'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'temperature'
+      | 'toolChoice'
+      | 'topP'
+    >
+  [AION_LABS_AION_3_5_MINI.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'maxCompletionTokens'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'temperature'
+      | 'toolChoice'
+      | 'topP'
+    >
   [AION_LABS_AION_RP_LLAMA_3_1_8B.id]: OpenRouterCommonOptions &
     Pick<OpenRouterBaseOptions, 'maxCompletionTokens' | 'temperature' | 'topP'>
   [AMAZON_NOVA_2_LITE_V1.id]: OpenRouterCommonOptions &
@@ -14515,11 +14941,6 @@ export type OpenRouterModelOptionsByName = {
       | 'temperature'
       | 'topLogprobs'
       | 'topP'
-    >
-  [ANTHROPIC_CLAUDE_3_HAIKU.id]: OpenRouterCommonOptions &
-    Pick<
-      OpenRouterBaseOptions,
-      'maxCompletionTokens' | 'stop' | 'temperature' | 'toolChoice' | 'topP'
     >
   [ANTHROPIC_CLAUDE_FABLE_5.id]: OpenRouterCommonOptions &
     Pick<
@@ -14697,6 +15118,26 @@ export type OpenRouterModelOptionsByName = {
       | 'toolChoice'
     >
   [ANTHROPIC_CLAUDE_OPUS_5_BATCH.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'maxCompletionTokens'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'stop'
+      | 'toolChoice'
+    >
+  [ANTHROPIC_CLAUDE_OPUS_5_5.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'maxCompletionTokens'
+      | 'maxCompletionTokens'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'stop'
+      | 'temperature'
+      | 'toolChoice'
+    >
+  [ANTHROPIC_CLAUDE_OPUS_5_5_BATCH.id]: OpenRouterCommonOptions &
     Pick<
       OpenRouterBaseOptions,
       | 'maxCompletionTokens'
@@ -14904,6 +15345,19 @@ export type OpenRouterModelOptionsByName = {
       | 'frequencyPenalty'
       | 'maxCompletionTokens'
       | 'presencePenalty'
+      | 'responseFormat'
+      | 'seed'
+      | 'stop'
+      | 'temperature'
+      | 'topP'
+    >
+  [COHERE_COMMAND_A_PLUS.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'frequencyPenalty'
+      | 'maxCompletionTokens'
+      | 'presencePenalty'
+      | 'reasoning'
       | 'responseFormat'
       | 'seed'
       | 'stop'
@@ -15136,22 +15590,6 @@ export type OpenRouterModelOptionsByName = {
       | 'topLogprobs'
       | 'topP'
     >
-  [DEEPSEEK_DEEPSEEK_V4_FLASH_0731_BATCH.id]: OpenRouterCommonOptions &
-    Pick<
-      OpenRouterBaseOptions,
-      | 'frequencyPenalty'
-      | 'logitBias'
-      | 'logprobs'
-      | 'maxCompletionTokens'
-      | 'presencePenalty'
-      | 'reasoning'
-      | 'responseFormat'
-      | 'stop'
-      | 'temperature'
-      | 'toolChoice'
-      | 'topLogprobs'
-      | 'topP'
-    >
   [DEEPSEEK_DEEPSEEK_V4_FLASH_VISION_EXP.id]: OpenRouterCommonOptions &
     Pick<
       OpenRouterBaseOptions,
@@ -15163,22 +15601,6 @@ export type OpenRouterModelOptionsByName = {
       | 'reasoning'
       | 'responseFormat'
       | 'seed'
-      | 'stop'
-      | 'temperature'
-      | 'toolChoice'
-      | 'topLogprobs'
-      | 'topP'
-    >
-  [DEEPSEEK_DEEPSEEK_V4_FLASH_VISION_EXP_BATCH.id]: OpenRouterCommonOptions &
-    Pick<
-      OpenRouterBaseOptions,
-      | 'frequencyPenalty'
-      | 'logitBias'
-      | 'logprobs'
-      | 'maxCompletionTokens'
-      | 'presencePenalty'
-      | 'reasoning'
-      | 'responseFormat'
       | 'stop'
       | 'temperature'
       | 'toolChoice'
@@ -15220,22 +15642,6 @@ export type OpenRouterModelOptionsByName = {
       | 'topLogprobs'
       | 'topP'
     >
-  [DEEPSEEK_DEEPSEEK_V4_PRO_0813_BATCH.id]: OpenRouterCommonOptions &
-    Pick<
-      OpenRouterBaseOptions,
-      | 'frequencyPenalty'
-      | 'logitBias'
-      | 'logprobs'
-      | 'maxCompletionTokens'
-      | 'presencePenalty'
-      | 'reasoning'
-      | 'responseFormat'
-      | 'stop'
-      | 'temperature'
-      | 'toolChoice'
-      | 'topLogprobs'
-      | 'topP'
-    >
   [DEEPSEEK_DEEPSEEK_V4_1_FLASH.id]: OpenRouterCommonOptions &
     Pick<
       OpenRouterBaseOptions,
@@ -15253,6 +15659,21 @@ export type OpenRouterModelOptionsByName = {
       | 'topLogprobs'
       | 'topP'
     >
+  [DEEPSEEK_DEEPSEEK_V4_1_FLASH_BATCH.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'frequencyPenalty'
+      | 'logitBias'
+      | 'maxCompletionTokens'
+      | 'presencePenalty'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'seed'
+      | 'stop'
+      | 'temperature'
+      | 'toolChoice'
+      | 'topP'
+    >
   [DOTS_STUDIO_DOTS_3_NOTE_PREVIEW_FREE.id]: OpenRouterCommonOptions &
     Pick<
       OpenRouterBaseOptions,
@@ -15261,6 +15682,22 @@ export type OpenRouterModelOptionsByName = {
       | 'responseFormat'
       | 'temperature'
       | 'toolChoice'
+      | 'topP'
+    >
+  [FIREWORKS_EMBER_1.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'frequencyPenalty'
+      | 'logitBias'
+      | 'logprobs'
+      | 'maxCompletionTokens'
+      | 'presencePenalty'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'stop'
+      | 'temperature'
+      | 'toolChoice'
+      | 'topLogprobs'
       | 'topP'
     >
   [GOOGLE_GEMINI_2_5_FLASH.id]: OpenRouterCommonOptions &
@@ -15870,24 +16307,11 @@ export type OpenRouterModelOptionsByName = {
       OpenRouterBaseOptions,
       | 'frequencyPenalty'
       | 'logitBias'
-      | 'maxCompletionTokens'
-      | 'presencePenalty'
-      | 'reasoning'
-      | 'responseFormat'
-      | 'seed'
-      | 'stop'
-      | 'temperature'
-      | 'toolChoice'
-      | 'topP'
-    >
-  [INCLUSIONAI_LING_3_0_FLASH_VL_FREE.id]: OpenRouterCommonOptions &
-    Pick<
-      OpenRouterBaseOptions,
-      | 'frequencyPenalty'
       | 'logprobs'
       | 'maxCompletionTokens'
       | 'presencePenalty'
       | 'reasoning'
+      | 'responseFormat'
       | 'seed'
       | 'stop'
       | 'temperature'
@@ -15950,6 +16374,7 @@ export type OpenRouterModelOptionsByName = {
       | 'temperature'
       | 'toolChoice'
       | 'topLogprobs'
+      | 'topP'
     >
   [MANCER_WEAVER.id]: OpenRouterCommonOptions &
     Pick<
@@ -16105,22 +16530,6 @@ export type OpenRouterModelOptionsByName = {
       | 'reasoning'
       | 'responseFormat'
       | 'seed'
-      | 'stop'
-      | 'temperature'
-      | 'toolChoice'
-      | 'topLogprobs'
-      | 'topP'
-    >
-  [META_MUSE_GLIMMER_30B_BATCH.id]: OpenRouterCommonOptions &
-    Pick<
-      OpenRouterBaseOptions,
-      | 'frequencyPenalty'
-      | 'logitBias'
-      | 'logprobs'
-      | 'maxCompletionTokens'
-      | 'presencePenalty'
-      | 'reasoning'
-      | 'responseFormat'
       | 'stop'
       | 'temperature'
       | 'toolChoice'
@@ -16405,6 +16814,19 @@ export type OpenRouterModelOptionsByName = {
       | 'topP'
     >
   [MISTRALAI_MISTRAL_LARGE_2407.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'frequencyPenalty'
+      | 'maxCompletionTokens'
+      | 'presencePenalty'
+      | 'responseFormat'
+      | 'seed'
+      | 'stop'
+      | 'temperature'
+      | 'toolChoice'
+      | 'topP'
+    >
+  [MISTRALAI_MISTRAL_LARGE_2512.id]: OpenRouterCommonOptions &
     Pick<
       OpenRouterBaseOptions,
       | 'frequencyPenalty'
@@ -16735,6 +17157,21 @@ export type OpenRouterModelOptionsByName = {
       | 'topLogprobs'
       | 'topP'
     >
+  [MOONSHOTAI_KIMI_K3_BATCH.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'frequencyPenalty'
+      | 'logitBias'
+      | 'maxCompletionTokens'
+      | 'presencePenalty'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'seed'
+      | 'stop'
+      | 'temperature'
+      | 'toolChoice'
+      | 'topP'
+    >
   [MORPH_MORPH_V3_FAST.id]: OpenRouterCommonOptions &
     Pick<OpenRouterBaseOptions, 'maxCompletionTokens' | 'stop' | 'temperature'>
   [MORPH_MORPH_V3_LARGE.id]: OpenRouterCommonOptions &
@@ -16746,51 +17183,6 @@ export type OpenRouterModelOptionsByName = {
       | 'stop'
       | 'temperature'
       | 'topLogprobs'
-    >
-  [NEX_AGI_NEX_N2_5_MINI.id]: OpenRouterCommonOptions &
-    Pick<
-      OpenRouterBaseOptions,
-      | 'logprobs'
-      | 'maxCompletionTokens'
-      | 'reasoning'
-      | 'temperature'
-      | 'topLogprobs'
-      | 'topP'
-    >
-  [NEX_AGI_NEX_N2_5_MINI_FREE.id]: OpenRouterCommonOptions &
-    Pick<
-      OpenRouterBaseOptions,
-      | 'logprobs'
-      | 'maxCompletionTokens'
-      | 'reasoning'
-      | 'responseFormat'
-      | 'temperature'
-      | 'toolChoice'
-      | 'topLogprobs'
-      | 'topP'
-    >
-  [NEX_AGI_NEX_N2_5_PRO.id]: OpenRouterCommonOptions &
-    Pick<
-      OpenRouterBaseOptions,
-      | 'logprobs'
-      | 'maxCompletionTokens'
-      | 'reasoning'
-      | 'temperature'
-      | 'toolChoice'
-      | 'topLogprobs'
-      | 'topP'
-    >
-  [NEX_AGI_NEX_N2_5_PRO_FREE.id]: OpenRouterCommonOptions &
-    Pick<
-      OpenRouterBaseOptions,
-      | 'logprobs'
-      | 'maxCompletionTokens'
-      | 'reasoning'
-      | 'responseFormat'
-      | 'temperature'
-      | 'toolChoice'
-      | 'topLogprobs'
-      | 'topP'
     >
   [NOUSRESEARCH_HERMES_3_LLAMA_3_1_405B.id]: OpenRouterCommonOptions &
     Pick<
@@ -17770,6 +18162,82 @@ export type OpenRouterModelOptionsByName = {
       | 'seed'
       | 'toolChoice'
     >
+  [OPENAI_GPT_6_LUNA.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'maxCompletionTokens'
+      | 'maxCompletionTokens'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'seed'
+      | 'toolChoice'
+    >
+  [OPENAI_GPT_6_LUNA_PRO.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'maxCompletionTokens'
+      | 'maxCompletionTokens'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'seed'
+      | 'toolChoice'
+    >
+  [OPENAI_GPT_6_LUNA_PRO_BATCH.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'maxCompletionTokens'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'seed'
+      | 'toolChoice'
+    >
+  [OPENAI_GPT_6_LUNA_BATCH.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'maxCompletionTokens'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'seed'
+      | 'toolChoice'
+    >
+  [OPENAI_GPT_6_SOL.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'maxCompletionTokens'
+      | 'maxCompletionTokens'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'seed'
+      | 'toolChoice'
+    >
+  [OPENAI_GPT_6_SOL_PRO.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'maxCompletionTokens'
+      | 'maxCompletionTokens'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'seed'
+      | 'toolChoice'
+    >
+  [OPENAI_GPT_6_SOL_PRO_BATCH.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'maxCompletionTokens'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'seed'
+      | 'toolChoice'
+    >
+  [OPENAI_GPT_6_SOL_BATCH.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'maxCompletionTokens'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'seed'
+      | 'toolChoice'
+    >
   [OPENAI_GPT_AUDIO.id]: OpenRouterCommonOptions &
     Pick<
       OpenRouterBaseOptions,
@@ -17824,6 +18292,21 @@ export type OpenRouterModelOptionsByName = {
       | 'topLogprobs'
       | 'topP'
     >
+  [OPENAI_GPT_OSS_120B_BATCH.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'frequencyPenalty'
+      | 'logitBias'
+      | 'maxCompletionTokens'
+      | 'presencePenalty'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'seed'
+      | 'stop'
+      | 'temperature'
+      | 'toolChoice'
+      | 'topP'
+    >
   [OPENAI_GPT_OSS_20B.id]: OpenRouterCommonOptions &
     Pick<
       OpenRouterBaseOptions,
@@ -17839,6 +18322,21 @@ export type OpenRouterModelOptionsByName = {
       | 'temperature'
       | 'toolChoice'
       | 'topLogprobs'
+      | 'topP'
+    >
+  [OPENAI_GPT_OSS_20B_BATCH.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'frequencyPenalty'
+      | 'logitBias'
+      | 'maxCompletionTokens'
+      | 'presencePenalty'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'seed'
+      | 'stop'
+      | 'temperature'
+      | 'toolChoice'
       | 'topP'
     >
   [OPENAI_GPT_OSS_SAFEGUARD_20B.id]: OpenRouterCommonOptions &
@@ -17956,6 +18454,17 @@ export type OpenRouterModelOptionsByName = {
       | 'presencePenalty'
       | 'reasoning'
       | 'temperature'
+      | 'topP'
+    >
+  [PERCEPTRON_PERCEPTRON_MK1_5.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'frequencyPenalty'
+      | 'maxCompletionTokens'
+      | 'presencePenalty'
+      | 'reasoning'
+      | 'temperature'
+      | 'toolChoice'
       | 'topP'
     >
   [PERPLEXITY_SONAR.id]: OpenRouterCommonOptions &
@@ -18852,6 +19361,38 @@ export type OpenRouterModelOptionsByName = {
       | 'topLogprobs'
       | 'topP'
     >
+  [QWEN_QWEN3_8_MAX_PRIME.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'frequencyPenalty'
+      | 'logprobs'
+      | 'maxCompletionTokens'
+      | 'presencePenalty'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'seed'
+      | 'stop'
+      | 'temperature'
+      | 'toolChoice'
+      | 'topLogprobs'
+      | 'topP'
+    >
+  [QWEN_QWEN3_8_OMNI_FLASH.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'frequencyPenalty'
+      | 'logprobs'
+      | 'maxCompletionTokens'
+      | 'presencePenalty'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'seed'
+      | 'stop'
+      | 'temperature'
+      | 'toolChoice'
+      | 'topLogprobs'
+      | 'topP'
+    >
   [REKAAI_REKA_EDGE.id]: OpenRouterCommonOptions &
     Pick<
       OpenRouterBaseOptions,
@@ -18943,6 +19484,16 @@ export type OpenRouterModelOptionsByName = {
       | 'topLogprobs'
       | 'topP'
     >
+  [STEALTH_SPACE_BUNNY_ALPHA.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'maxCompletionTokens'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'temperature'
+      | 'toolChoice'
+      | 'topP'
+    >
   [STEPFUN_STEP_3_5_FLASH.id]: OpenRouterCommonOptions &
     Pick<
       OpenRouterBaseOptions,
@@ -19032,13 +19583,17 @@ export type OpenRouterModelOptionsByName = {
   [TENCENT_HY4_PREVIEW.id]: OpenRouterCommonOptions &
     Pick<
       OpenRouterBaseOptions,
+      | 'frequencyPenalty'
       | 'maxCompletionTokens'
       | 'maxCompletionTokens'
+      | 'presencePenalty'
       | 'reasoning'
       | 'responseFormat'
+      | 'seed'
       | 'stop'
       | 'temperature'
       | 'toolChoice'
+      | 'topP'
     >
   [THEDRUMMER_CYDONIA_24B_V4_1.id]: OpenRouterCommonOptions &
     Pick<
@@ -19103,7 +19658,6 @@ export type OpenRouterModelOptionsByName = {
       OpenRouterBaseOptions,
       | 'frequencyPenalty'
       | 'logitBias'
-      | 'logprobs'
       | 'maxCompletionTokens'
       | 'presencePenalty'
       | 'reasoning'
@@ -19111,7 +19665,6 @@ export type OpenRouterModelOptionsByName = {
       | 'stop'
       | 'temperature'
       | 'toolChoice'
-      | 'topLogprobs'
       | 'topP'
     >
   [THINKINGMACHINES_INKLING_SMALL_FREE.id]: OpenRouterCommonOptions &
@@ -19156,6 +19709,19 @@ export type OpenRouterModelOptionsByName = {
       | 'stop'
       | 'temperature'
       | 'topLogprobs'
+      | 'topP'
+    >
+  [UPSTAGE_SOLAR_MINI4.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'frequencyPenalty'
+      | 'maxCompletionTokens'
+      | 'parallelToolCalls'
+      | 'presencePenalty'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'temperature'
+      | 'toolChoice'
       | 'topP'
     >
   [UPSTAGE_SOLAR_PRO_3.id]: OpenRouterCommonOptions &
@@ -19329,10 +19895,12 @@ export type OpenRouterModelOptionsByName = {
     Pick<
       OpenRouterBaseOptions,
       | 'frequencyPenalty'
+      | 'logitBias'
       | 'maxCompletionTokens'
       | 'presencePenalty'
       | 'reasoning'
       | 'responseFormat'
+      | 'seed'
       | 'stop'
       | 'temperature'
       | 'toolChoice'
@@ -19342,10 +19910,12 @@ export type OpenRouterModelOptionsByName = {
     Pick<
       OpenRouterBaseOptions,
       | 'frequencyPenalty'
+      | 'logitBias'
       | 'maxCompletionTokens'
       | 'presencePenalty'
       | 'reasoning'
       | 'responseFormat'
+      | 'seed'
       | 'stop'
       | 'temperature'
       | 'toolChoice'
@@ -19523,34 +20093,6 @@ export type OpenRouterModelOptionsByName = {
       | 'topLogprobs'
       | 'topP'
     >
-  [Z_AI_GLM_5_2_BATCH.id]: OpenRouterCommonOptions &
-    Pick<
-      OpenRouterBaseOptions,
-      | 'frequencyPenalty'
-      | 'logitBias'
-      | 'logprobs'
-      | 'maxCompletionTokens'
-      | 'presencePenalty'
-      | 'reasoning'
-      | 'responseFormat'
-      | 'stop'
-      | 'temperature'
-      | 'toolChoice'
-      | 'topLogprobs'
-      | 'topP'
-    >
-  [Z_AI_GLM_5_2_FREE.id]: OpenRouterCommonOptions &
-    Pick<
-      OpenRouterBaseOptions,
-      | 'frequencyPenalty'
-      | 'maxCompletionTokens'
-      | 'presencePenalty'
-      | 'reasoning'
-      | 'seed'
-      | 'stop'
-      | 'temperature'
-      | 'topP'
-    >
   [Z_AI_GLM_5_3.id]: OpenRouterCommonOptions &
     Pick<
       OpenRouterBaseOptions,
@@ -19592,15 +20134,14 @@ export type OpenRouterModelOptionsByName = {
       OpenRouterBaseOptions,
       | 'frequencyPenalty'
       | 'logitBias'
-      | 'logprobs'
       | 'maxCompletionTokens'
       | 'presencePenalty'
       | 'reasoning'
       | 'responseFormat'
+      | 'seed'
       | 'stop'
       | 'temperature'
       | 'toolChoice'
-      | 'topLogprobs'
       | 'topP'
     >
   [Z_AI_GLM_5_3_FLASHX.id]: OpenRouterCommonOptions &
@@ -19613,20 +20154,35 @@ export type OpenRouterModelOptionsByName = {
       | 'toolChoice'
       | 'topP'
     >
-  [Z_AI_GLM_5_3_BATCH.id]: OpenRouterCommonOptions &
+  [Z_AI_GLM_5_3_PRIME.id]: OpenRouterCommonOptions &
     Pick<
       OpenRouterBaseOptions,
       | 'frequencyPenalty'
-      | 'logitBias'
       | 'logprobs'
       | 'maxCompletionTokens'
       | 'presencePenalty'
       | 'reasoning'
       | 'responseFormat'
+      | 'seed'
       | 'stop'
       | 'temperature'
       | 'toolChoice'
       | 'topLogprobs'
+      | 'topP'
+    >
+  [Z_AI_GLM_5_3_BATCH.id]: OpenRouterCommonOptions &
+    Pick<
+      OpenRouterBaseOptions,
+      | 'frequencyPenalty'
+      | 'logitBias'
+      | 'maxCompletionTokens'
+      | 'presencePenalty'
+      | 'reasoning'
+      | 'responseFormat'
+      | 'seed'
+      | 'stop'
+      | 'temperature'
+      | 'toolChoice'
       | 'topP'
     >
   [Z_AI_GLM_5V_TURBO.id]: OpenRouterCommonOptions &
@@ -19676,6 +20232,8 @@ export type OpenRouterModelInputModalitiesByName = {
   [AION_LABS_AION_2_0.id]: ReadonlyArray<'text'>
   [AION_LABS_AION_3_0.id]: ReadonlyArray<'text'>
   [AION_LABS_AION_3_0_MINI.id]: ReadonlyArray<'text'>
+  [AION_LABS_AION_3_5.id]: ReadonlyArray<'text'>
+  [AION_LABS_AION_3_5_MINI.id]: ReadonlyArray<'text'>
   [AION_LABS_AION_RP_LLAMA_3_1_8B.id]: ReadonlyArray<'text'>
   [AMAZON_NOVA_2_LITE_V1.id]: ReadonlyArray<
     'text' | 'image' | 'video' | 'document'
@@ -19685,7 +20243,6 @@ export type OpenRouterModelInputModalitiesByName = {
   [AMAZON_NOVA_PREMIER_V1.id]: ReadonlyArray<'text' | 'image'>
   [AMAZON_NOVA_PRO_V1.id]: ReadonlyArray<'text' | 'image'>
   [ANTHRACITE_ORG_MAGNUM_V4_72B.id]: ReadonlyArray<'text'>
-  [ANTHROPIC_CLAUDE_3_HAIKU.id]: ReadonlyArray<'text' | 'image'>
   [ANTHROPIC_CLAUDE_FABLE_5.id]: ReadonlyArray<'text' | 'image' | 'document'>
   [ANTHROPIC_CLAUDE_FABLE_5_BATCH.id]: ReadonlyArray<
     'text' | 'image' | 'document'
@@ -19722,6 +20279,10 @@ export type OpenRouterModelInputModalitiesByName = {
   [ANTHROPIC_CLAUDE_OPUS_5_BATCH.id]: ReadonlyArray<
     'text' | 'image' | 'document'
   >
+  [ANTHROPIC_CLAUDE_OPUS_5_5.id]: ReadonlyArray<'text' | 'image' | 'document'>
+  [ANTHROPIC_CLAUDE_OPUS_5_5_BATCH.id]: ReadonlyArray<
+    'text' | 'image' | 'document'
+  >
   [ANTHROPIC_CLAUDE_SONNET_4.id]: ReadonlyArray<'image' | 'text' | 'document'>
   [ANTHROPIC_CLAUDE_SONNET_4_5.id]: ReadonlyArray<'text' | 'image' | 'document'>
   [ANTHROPIC_CLAUDE_SONNET_4_5_BATCH.id]: ReadonlyArray<
@@ -19746,6 +20307,7 @@ export type OpenRouterModelInputModalitiesByName = {
   [BYTEDANCE_UI_TARS_1_5_7B.id]: ReadonlyArray<'image' | 'text'>
   [COGNITIVECOMPUTATIONS_DOLPHIN_MISTRAL_24B_VENICE_EDITION.id]: ReadonlyArray<'text'>
   [COHERE_COMMAND_A.id]: ReadonlyArray<'text'>
+  [COHERE_COMMAND_A_PLUS.id]: ReadonlyArray<'text' | 'image'>
   [COHERE_COMMAND_R_08_2024.id]: ReadonlyArray<'text'>
   [COHERE_COMMAND_R_PLUS_08_2024.id]: ReadonlyArray<'text'>
   [COHERE_COMMAND_R7B_12_2024.id]: ReadonlyArray<'text'>
@@ -19761,16 +20323,13 @@ export type OpenRouterModelInputModalitiesByName = {
   [DEEPSEEK_DEEPSEEK_V3_2_EXP.id]: ReadonlyArray<'text'>
   [DEEPSEEK_DEEPSEEK_V4_FLASH.id]: ReadonlyArray<'text'>
   [DEEPSEEK_DEEPSEEK_V4_FLASH_0731.id]: ReadonlyArray<'text'>
-  [DEEPSEEK_DEEPSEEK_V4_FLASH_0731_BATCH.id]: ReadonlyArray<'text'>
   [DEEPSEEK_DEEPSEEK_V4_FLASH_VISION_EXP.id]: ReadonlyArray<'text' | 'image'>
-  [DEEPSEEK_DEEPSEEK_V4_FLASH_VISION_EXP_BATCH.id]: ReadonlyArray<
-    'text' | 'image'
-  >
   [DEEPSEEK_DEEPSEEK_V4_PRO.id]: ReadonlyArray<'text'>
   [DEEPSEEK_DEEPSEEK_V4_PRO_0813.id]: ReadonlyArray<'text'>
-  [DEEPSEEK_DEEPSEEK_V4_PRO_0813_BATCH.id]: ReadonlyArray<'text'>
   [DEEPSEEK_DEEPSEEK_V4_1_FLASH.id]: ReadonlyArray<'text' | 'image'>
+  [DEEPSEEK_DEEPSEEK_V4_1_FLASH_BATCH.id]: ReadonlyArray<'text' | 'image'>
   [DOTS_STUDIO_DOTS_3_NOTE_PREVIEW_FREE.id]: ReadonlyArray<'text' | 'image'>
+  [FIREWORKS_EMBER_1.id]: ReadonlyArray<'text' | 'image'>
   [GOOGLE_GEMINI_2_5_FLASH.id]: ReadonlyArray<
     'document' | 'image' | 'text' | 'audio' | 'video'
   >
@@ -19872,9 +20431,6 @@ export type OpenRouterModelInputModalitiesByName = {
   [INCLUSIONAI_LING_3_0_FLASH_FIN_FREE.id]: ReadonlyArray<'text'>
   [INCLUSIONAI_LING_3_0_FLASH_SANTE_FREE.id]: ReadonlyArray<'text'>
   [INCLUSIONAI_LING_3_0_FLASH_VL.id]: ReadonlyArray<'text' | 'image' | 'video'>
-  [INCLUSIONAI_LING_3_0_FLASH_VL_FREE.id]: ReadonlyArray<
-    'text' | 'image' | 'video'
-  >
   [INFERENCE_NET_SCHEMATRON_V2_SMALL.id]: ReadonlyArray<'text'>
   [INFERENCE_NET_SCHEMATRON_V2_TURBO.id]: ReadonlyArray<'text'>
   [KWAIPILOT_KAT_CODER_PRO_V2_5.id]: ReadonlyArray<'text'>
@@ -19890,7 +20446,6 @@ export type OpenRouterModelInputModalitiesByName = {
   [META_LLAMA_LLAMA_4_SCOUT.id]: ReadonlyArray<'text' | 'image'>
   [META_LLAMA_LLAMA_GUARD_4_12B.id]: ReadonlyArray<'image' | 'text'>
   [META_MUSE_GLIMMER_30B.id]: ReadonlyArray<'text' | 'image'>
-  [META_MUSE_GLIMMER_30B_BATCH.id]: ReadonlyArray<'text' | 'image'>
   [META_MUSE_SPARK_1_1.id]: ReadonlyArray<
     'text' | 'image' | 'video' | 'document' | 'audio'
   >
@@ -19925,6 +20480,9 @@ export type OpenRouterModelInputModalitiesByName = {
   [MISTRALAI_MINISTRAL_8B_2512_BATCH.id]: ReadonlyArray<'text' | 'image'>
   [MISTRALAI_MISTRAL_LARGE.id]: ReadonlyArray<'text' | 'document'>
   [MISTRALAI_MISTRAL_LARGE_2407.id]: ReadonlyArray<'text' | 'document'>
+  [MISTRALAI_MISTRAL_LARGE_2512.id]: ReadonlyArray<
+    'text' | 'image' | 'document'
+  >
   [MISTRALAI_MISTRAL_LARGE_2512_BATCH.id]: ReadonlyArray<
     'text' | 'image' | 'document'
   >
@@ -19959,12 +20517,9 @@ export type OpenRouterModelInputModalitiesByName = {
   [MOONSHOTAI_KIMI_K2_6.id]: ReadonlyArray<'text' | 'image'>
   [MOONSHOTAI_KIMI_K2_7_CODE.id]: ReadonlyArray<'text' | 'image'>
   [MOONSHOTAI_KIMI_K3.id]: ReadonlyArray<'text' | 'image' | 'video'>
+  [MOONSHOTAI_KIMI_K3_BATCH.id]: ReadonlyArray<'text' | 'image' | 'video'>
   [MORPH_MORPH_V3_FAST.id]: ReadonlyArray<'text'>
   [MORPH_MORPH_V3_LARGE.id]: ReadonlyArray<'text'>
-  [NEX_AGI_NEX_N2_5_MINI.id]: ReadonlyArray<'text' | 'image'>
-  [NEX_AGI_NEX_N2_5_MINI_FREE.id]: ReadonlyArray<'text' | 'image'>
-  [NEX_AGI_NEX_N2_5_PRO.id]: ReadonlyArray<'text' | 'image'>
-  [NEX_AGI_NEX_N2_5_PRO_FREE.id]: ReadonlyArray<'text' | 'image'>
   [NOUSRESEARCH_HERMES_3_LLAMA_3_1_405B.id]: ReadonlyArray<'text'>
   [NOUSRESEARCH_HERMES_3_LLAMA_3_1_70B.id]: ReadonlyArray<'text'>
   [NOUSRESEARCH_HERMES_4_405B.id]: ReadonlyArray<'text'>
@@ -20063,11 +20618,21 @@ export type OpenRouterModelInputModalitiesByName = {
     'document' | 'image' | 'text'
   >
   [OPENAI_GPT_6_ASTRA_BATCH.id]: ReadonlyArray<'document' | 'image' | 'text'>
+  [OPENAI_GPT_6_LUNA.id]: ReadonlyArray<'document' | 'image' | 'text'>
+  [OPENAI_GPT_6_LUNA_PRO.id]: ReadonlyArray<'document' | 'image' | 'text'>
+  [OPENAI_GPT_6_LUNA_PRO_BATCH.id]: ReadonlyArray<'document' | 'image' | 'text'>
+  [OPENAI_GPT_6_LUNA_BATCH.id]: ReadonlyArray<'document' | 'image' | 'text'>
+  [OPENAI_GPT_6_SOL.id]: ReadonlyArray<'document' | 'image' | 'text'>
+  [OPENAI_GPT_6_SOL_PRO.id]: ReadonlyArray<'document' | 'image' | 'text'>
+  [OPENAI_GPT_6_SOL_PRO_BATCH.id]: ReadonlyArray<'document' | 'image' | 'text'>
+  [OPENAI_GPT_6_SOL_BATCH.id]: ReadonlyArray<'document' | 'image' | 'text'>
   [OPENAI_GPT_AUDIO.id]: ReadonlyArray<'text' | 'audio'>
   [OPENAI_GPT_AUDIO_MINI.id]: ReadonlyArray<'text' | 'audio'>
   [OPENAI_GPT_CHAT_LATEST.id]: ReadonlyArray<'text' | 'image' | 'document'>
   [OPENAI_GPT_OSS_120B.id]: ReadonlyArray<'text'>
+  [OPENAI_GPT_OSS_120B_BATCH.id]: ReadonlyArray<'text'>
   [OPENAI_GPT_OSS_20B.id]: ReadonlyArray<'text'>
+  [OPENAI_GPT_OSS_20B_BATCH.id]: ReadonlyArray<'text'>
   [OPENAI_GPT_OSS_SAFEGUARD_20B.id]: ReadonlyArray<'text'>
   [OPENAI_O1.id]: ReadonlyArray<'text' | 'image' | 'document'>
   [OPENAI_O1_PRO.id]: ReadonlyArray<'text' | 'image' | 'document'>
@@ -20081,6 +20646,9 @@ export type OpenRouterModelInputModalitiesByName = {
   [OPENAI_O4_MINI_HIGH.id]: ReadonlyArray<'image' | 'text' | 'document'>
   [OPENAI_O4_MINI_BATCH.id]: ReadonlyArray<'image' | 'text' | 'document'>
   [PERCEPTRON_PERCEPTRON_MK1.id]: ReadonlyArray<'text' | 'image' | 'video'>
+  [PERCEPTRON_PERCEPTRON_MK1_5.id]: ReadonlyArray<
+    'text' | 'image' | 'video' | 'audio'
+  >
   [PERPLEXITY_SONAR.id]: ReadonlyArray<'text' | 'image'>
   [PERPLEXITY_SONAR_DEEP_RESEARCH.id]: ReadonlyArray<'text'>
   [PERPLEXITY_SONAR_PRO.id]: ReadonlyArray<'text' | 'image'>
@@ -20143,6 +20711,10 @@ export type OpenRouterModelInputModalitiesByName = {
   [QWEN_QWEN3_8_27B_FREE.id]: ReadonlyArray<'text' | 'image' | 'video'>
   [QWEN_QWEN3_8_FLASH.id]: ReadonlyArray<'text' | 'image' | 'video'>
   [QWEN_QWEN3_8_MAX_0902.id]: ReadonlyArray<'text' | 'image' | 'video'>
+  [QWEN_QWEN3_8_MAX_PRIME.id]: ReadonlyArray<'text' | 'image' | 'video'>
+  [QWEN_QWEN3_8_OMNI_FLASH.id]: ReadonlyArray<
+    'text' | 'image' | 'audio' | 'video'
+  >
   [REKAAI_REKA_EDGE.id]: ReadonlyArray<'image' | 'text' | 'video'>
   [REKAAI_REKA_FLASH_3.id]: ReadonlyArray<'text'>
   [RELACE_RELACE_APPLY_3.id]: ReadonlyArray<'text'>
@@ -20154,6 +20726,7 @@ export type OpenRouterModelInputModalitiesByName = {
   [SAO10K_L3_LUNARIS_8B.id]: ReadonlyArray<'text'>
   [SAO10K_L3_1_EURYALE_70B.id]: ReadonlyArray<'text'>
   [SAO10K_L3_3_EURYALE_70B.id]: ReadonlyArray<'text'>
+  [STEALTH_SPACE_BUNNY_ALPHA.id]: ReadonlyArray<'text' | 'image' | 'video'>
   [STEPFUN_STEP_3_5_FLASH.id]: ReadonlyArray<'text'>
   [STEPFUN_STEP_3_7_FLASH.id]: ReadonlyArray<'text' | 'image' | 'video'>
   [TENCENT_HUNYUAN_A13B_INSTRUCT.id]: ReadonlyArray<'text'>
@@ -20174,6 +20747,7 @@ export type OpenRouterModelInputModalitiesByName = {
   [THINKINGMACHINES_INKLING_FREE.id]: ReadonlyArray<'text' | 'image' | 'audio'>
   [UNBIASED_PARETO.id]: ReadonlyArray<'text' | 'image'>
   [UNDI95_REMM_SLERP_L2_13B.id]: ReadonlyArray<'text'>
+  [UPSTAGE_SOLAR_MINI4.id]: ReadonlyArray<'text'>
   [UPSTAGE_SOLAR_PRO_3.id]: ReadonlyArray<'text'>
   [UPSTAGE_SOLAR_PRO4.id]: ReadonlyArray<'text'>
   [WRITER_PALMYRA_X5.id]: ReadonlyArray<'text'>
@@ -20205,12 +20779,11 @@ export type OpenRouterModelInputModalitiesByName = {
   [Z_AI_GLM_5_TURBO.id]: ReadonlyArray<'text'>
   [Z_AI_GLM_5_1.id]: ReadonlyArray<'text'>
   [Z_AI_GLM_5_2.id]: ReadonlyArray<'text'>
-  [Z_AI_GLM_5_2_BATCH.id]: ReadonlyArray<'text'>
-  [Z_AI_GLM_5_2_FREE.id]: ReadonlyArray<'text'>
   [Z_AI_GLM_5_3.id]: ReadonlyArray<'text'>
   [Z_AI_GLM_5_3_FLASH.id]: ReadonlyArray<'text' | 'image' | 'video'>
   [Z_AI_GLM_5_3_FLASH_BATCH.id]: ReadonlyArray<'text' | 'image' | 'video'>
   [Z_AI_GLM_5_3_FLASHX.id]: ReadonlyArray<'text' | 'image' | 'video'>
+  [Z_AI_GLM_5_3_PRIME.id]: ReadonlyArray<'text'>
   [Z_AI_GLM_5_3_BATCH.id]: ReadonlyArray<'text'>
   [Z_AI_GLM_5V_TURBO.id]: ReadonlyArray<'image' | 'text' | 'video'>
   'openrouter/auto': ReadonlyArray<
@@ -20240,6 +20813,8 @@ export const OPENROUTER_CHAT_MODELS = [
   AION_LABS_AION_2_0.id,
   AION_LABS_AION_3_0.id,
   AION_LABS_AION_3_0_MINI.id,
+  AION_LABS_AION_3_5.id,
+  AION_LABS_AION_3_5_MINI.id,
   AION_LABS_AION_RP_LLAMA_3_1_8B.id,
   AMAZON_NOVA_2_LITE_V1.id,
   AMAZON_NOVA_LITE_V1.id,
@@ -20247,7 +20822,6 @@ export const OPENROUTER_CHAT_MODELS = [
   AMAZON_NOVA_PREMIER_V1.id,
   AMAZON_NOVA_PRO_V1.id,
   ANTHRACITE_ORG_MAGNUM_V4_72B.id,
-  ANTHROPIC_CLAUDE_3_HAIKU.id,
   ANTHROPIC_CLAUDE_FABLE_5.id,
   ANTHROPIC_CLAUDE_FABLE_5_BATCH.id,
   ANTHROPIC_CLAUDE_FABLE_5_1.id,
@@ -20266,6 +20840,8 @@ export const OPENROUTER_CHAT_MODELS = [
   ANTHROPIC_CLAUDE_OPUS_4_8_BATCH.id,
   ANTHROPIC_CLAUDE_OPUS_5.id,
   ANTHROPIC_CLAUDE_OPUS_5_BATCH.id,
+  ANTHROPIC_CLAUDE_OPUS_5_5.id,
+  ANTHROPIC_CLAUDE_OPUS_5_5_BATCH.id,
   ANTHROPIC_CLAUDE_SONNET_4.id,
   ANTHROPIC_CLAUDE_SONNET_4_5.id,
   ANTHROPIC_CLAUDE_SONNET_4_5_BATCH.id,
@@ -20284,6 +20860,7 @@ export const OPENROUTER_CHAT_MODELS = [
   BYTEDANCE_UI_TARS_1_5_7B.id,
   COGNITIVECOMPUTATIONS_DOLPHIN_MISTRAL_24B_VENICE_EDITION.id,
   COHERE_COMMAND_A.id,
+  COHERE_COMMAND_A_PLUS.id,
   COHERE_COMMAND_R_08_2024.id,
   COHERE_COMMAND_R_PLUS_08_2024.id,
   COHERE_COMMAND_R7B_12_2024.id,
@@ -20299,14 +20876,13 @@ export const OPENROUTER_CHAT_MODELS = [
   DEEPSEEK_DEEPSEEK_V3_2_EXP.id,
   DEEPSEEK_DEEPSEEK_V4_FLASH.id,
   DEEPSEEK_DEEPSEEK_V4_FLASH_0731.id,
-  DEEPSEEK_DEEPSEEK_V4_FLASH_0731_BATCH.id,
   DEEPSEEK_DEEPSEEK_V4_FLASH_VISION_EXP.id,
-  DEEPSEEK_DEEPSEEK_V4_FLASH_VISION_EXP_BATCH.id,
   DEEPSEEK_DEEPSEEK_V4_PRO.id,
   DEEPSEEK_DEEPSEEK_V4_PRO_0813.id,
-  DEEPSEEK_DEEPSEEK_V4_PRO_0813_BATCH.id,
   DEEPSEEK_DEEPSEEK_V4_1_FLASH.id,
+  DEEPSEEK_DEEPSEEK_V4_1_FLASH_BATCH.id,
   DOTS_STUDIO_DOTS_3_NOTE_PREVIEW_FREE.id,
+  FIREWORKS_EMBER_1.id,
   GOOGLE_GEMINI_2_5_FLASH.id,
   GOOGLE_GEMINI_2_5_FLASH_IMAGE.id,
   GOOGLE_GEMINI_2_5_FLASH_LITE.id,
@@ -20356,7 +20932,6 @@ export const OPENROUTER_CHAT_MODELS = [
   INCLUSIONAI_LING_3_0_FLASH_FIN_FREE.id,
   INCLUSIONAI_LING_3_0_FLASH_SANTE_FREE.id,
   INCLUSIONAI_LING_3_0_FLASH_VL.id,
-  INCLUSIONAI_LING_3_0_FLASH_VL_FREE.id,
   INFERENCE_NET_SCHEMATRON_V2_SMALL.id,
   INFERENCE_NET_SCHEMATRON_V2_TURBO.id,
   KWAIPILOT_KAT_CODER_PRO_V2_5.id,
@@ -20372,7 +20947,6 @@ export const OPENROUTER_CHAT_MODELS = [
   META_LLAMA_LLAMA_4_SCOUT.id,
   META_LLAMA_LLAMA_GUARD_4_12B.id,
   META_MUSE_GLIMMER_30B.id,
-  META_MUSE_GLIMMER_30B_BATCH.id,
   META_MUSE_SPARK_1_1.id,
   META_MUSE_SPARK_1_2.id,
   META_MUSE_SPARK_1_2_CONTRIBUTOR.id,
@@ -20397,6 +20971,7 @@ export const OPENROUTER_CHAT_MODELS = [
   MISTRALAI_MINISTRAL_8B_2512_BATCH.id,
   MISTRALAI_MISTRAL_LARGE.id,
   MISTRALAI_MISTRAL_LARGE_2407.id,
+  MISTRALAI_MISTRAL_LARGE_2512.id,
   MISTRALAI_MISTRAL_LARGE_2512_BATCH.id,
   MISTRALAI_MISTRAL_MEDIUM_3.id,
   MISTRALAI_MISTRAL_MEDIUM_3_5.id,
@@ -20419,12 +20994,9 @@ export const OPENROUTER_CHAT_MODELS = [
   MOONSHOTAI_KIMI_K2_6.id,
   MOONSHOTAI_KIMI_K2_7_CODE.id,
   MOONSHOTAI_KIMI_K3.id,
+  MOONSHOTAI_KIMI_K3_BATCH.id,
   MORPH_MORPH_V3_FAST.id,
   MORPH_MORPH_V3_LARGE.id,
-  NEX_AGI_NEX_N2_5_MINI.id,
-  NEX_AGI_NEX_N2_5_MINI_FREE.id,
-  NEX_AGI_NEX_N2_5_PRO.id,
-  NEX_AGI_NEX_N2_5_PRO_FREE.id,
   NOUSRESEARCH_HERMES_3_LLAMA_3_1_405B.id,
   NOUSRESEARCH_HERMES_3_LLAMA_3_1_70B.id,
   NOUSRESEARCH_HERMES_4_405B.id,
@@ -20511,11 +21083,21 @@ export const OPENROUTER_CHAT_MODELS = [
   OPENAI_GPT_6_ASTRA_PRO.id,
   OPENAI_GPT_6_ASTRA_PRO_BATCH.id,
   OPENAI_GPT_6_ASTRA_BATCH.id,
+  OPENAI_GPT_6_LUNA.id,
+  OPENAI_GPT_6_LUNA_PRO.id,
+  OPENAI_GPT_6_LUNA_PRO_BATCH.id,
+  OPENAI_GPT_6_LUNA_BATCH.id,
+  OPENAI_GPT_6_SOL.id,
+  OPENAI_GPT_6_SOL_PRO.id,
+  OPENAI_GPT_6_SOL_PRO_BATCH.id,
+  OPENAI_GPT_6_SOL_BATCH.id,
   OPENAI_GPT_AUDIO.id,
   OPENAI_GPT_AUDIO_MINI.id,
   OPENAI_GPT_CHAT_LATEST.id,
   OPENAI_GPT_OSS_120B.id,
+  OPENAI_GPT_OSS_120B_BATCH.id,
   OPENAI_GPT_OSS_20B.id,
+  OPENAI_GPT_OSS_20B_BATCH.id,
   OPENAI_GPT_OSS_SAFEGUARD_20B.id,
   OPENAI_O1.id,
   OPENAI_O1_PRO.id,
@@ -20529,6 +21111,7 @@ export const OPENROUTER_CHAT_MODELS = [
   OPENAI_O4_MINI_HIGH.id,
   OPENAI_O4_MINI_BATCH.id,
   PERCEPTRON_PERCEPTRON_MK1.id,
+  PERCEPTRON_PERCEPTRON_MK1_5.id,
   PERPLEXITY_SONAR.id,
   PERPLEXITY_SONAR_DEEP_RESEARCH.id,
   PERPLEXITY_SONAR_PRO.id,
@@ -20591,6 +21174,8 @@ export const OPENROUTER_CHAT_MODELS = [
   QWEN_QWEN3_8_27B_FREE.id,
   QWEN_QWEN3_8_FLASH.id,
   QWEN_QWEN3_8_MAX_0902.id,
+  QWEN_QWEN3_8_MAX_PRIME.id,
+  QWEN_QWEN3_8_OMNI_FLASH.id,
   REKAAI_REKA_EDGE.id,
   REKAAI_REKA_FLASH_3.id,
   RELACE_RELACE_APPLY_3.id,
@@ -20602,6 +21187,7 @@ export const OPENROUTER_CHAT_MODELS = [
   SAO10K_L3_LUNARIS_8B.id,
   SAO10K_L3_1_EURYALE_70B.id,
   SAO10K_L3_3_EURYALE_70B.id,
+  STEALTH_SPACE_BUNNY_ALPHA.id,
   STEPFUN_STEP_3_5_FLASH.id,
   STEPFUN_STEP_3_7_FLASH.id,
   TENCENT_HUNYUAN_A13B_INSTRUCT.id,
@@ -20620,6 +21206,7 @@ export const OPENROUTER_CHAT_MODELS = [
   THINKINGMACHINES_INKLING_FREE.id,
   UNBIASED_PARETO.id,
   UNDI95_REMM_SLERP_L2_13B.id,
+  UPSTAGE_SOLAR_MINI4.id,
   UPSTAGE_SOLAR_PRO_3.id,
   UPSTAGE_SOLAR_PRO4.id,
   WRITER_PALMYRA_X5.id,
@@ -20647,12 +21234,11 @@ export const OPENROUTER_CHAT_MODELS = [
   Z_AI_GLM_5_TURBO.id,
   Z_AI_GLM_5_1.id,
   Z_AI_GLM_5_2.id,
-  Z_AI_GLM_5_2_BATCH.id,
-  Z_AI_GLM_5_2_FREE.id,
   Z_AI_GLM_5_3.id,
   Z_AI_GLM_5_3_FLASH.id,
   Z_AI_GLM_5_3_FLASH_BATCH.id,
   Z_AI_GLM_5_3_FLASHX.id,
+  Z_AI_GLM_5_3_PRIME.id,
   Z_AI_GLM_5_3_BATCH.id,
   Z_AI_GLM_5V_TURBO.id,
   'openrouter/auto',
@@ -21208,6 +21794,8 @@ export const OPENROUTER_COMBINED_TOOLS_AND_SCHEMA_MODELS: ReadonlySet<string> =
     ANTHROPIC_CLAUDE_OPUS_4_8_BATCH.id,
     ANTHROPIC_CLAUDE_OPUS_5.id,
     ANTHROPIC_CLAUDE_OPUS_5_BATCH.id,
+    ANTHROPIC_CLAUDE_OPUS_5_5.id,
+    ANTHROPIC_CLAUDE_OPUS_5_5_BATCH.id,
     ANTHROPIC_CLAUDE_SONNET_4_5.id,
     ANTHROPIC_CLAUDE_SONNET_4_5_BATCH.id,
     ANTHROPIC_CLAUDE_SONNET_4_6.id,
@@ -21231,14 +21819,13 @@ export const OPENROUTER_COMBINED_TOOLS_AND_SCHEMA_MODELS: ReadonlySet<string> =
     DEEPSEEK_DEEPSEEK_V3_2_EXP.id,
     DEEPSEEK_DEEPSEEK_V4_FLASH.id,
     DEEPSEEK_DEEPSEEK_V4_FLASH_0731.id,
-    DEEPSEEK_DEEPSEEK_V4_FLASH_0731_BATCH.id,
     DEEPSEEK_DEEPSEEK_V4_FLASH_VISION_EXP.id,
-    DEEPSEEK_DEEPSEEK_V4_FLASH_VISION_EXP_BATCH.id,
     DEEPSEEK_DEEPSEEK_V4_PRO.id,
     DEEPSEEK_DEEPSEEK_V4_PRO_0813.id,
-    DEEPSEEK_DEEPSEEK_V4_PRO_0813_BATCH.id,
     DEEPSEEK_DEEPSEEK_V4_1_FLASH.id,
+    DEEPSEEK_DEEPSEEK_V4_1_FLASH_BATCH.id,
     DOTS_STUDIO_DOTS_3_NOTE_PREVIEW_FREE.id,
+    FIREWORKS_EMBER_1.id,
     GOOGLE_GEMINI_2_5_FLASH.id,
     GOOGLE_GEMINI_2_5_FLASH_LITE.id,
     GOOGLE_GEMINI_2_5_FLASH_LITE_BATCH.id,
@@ -21282,7 +21869,6 @@ export const OPENROUTER_COMBINED_TOOLS_AND_SCHEMA_MODELS: ReadonlySet<string> =
     META_LLAMA_LLAMA_4_MAVERICK.id,
     META_LLAMA_LLAMA_4_SCOUT.id,
     META_MUSE_GLIMMER_30B.id,
-    META_MUSE_GLIMMER_30B_BATCH.id,
     META_MUSE_SPARK_1_1.id,
     META_MUSE_SPARK_1_2.id,
     META_MUSE_SPARK_1_2_CONTRIBUTOR.id,
@@ -21301,6 +21887,7 @@ export const OPENROUTER_COMBINED_TOOLS_AND_SCHEMA_MODELS: ReadonlySet<string> =
     MISTRALAI_MINISTRAL_8B_2512_BATCH.id,
     MISTRALAI_MISTRAL_LARGE.id,
     MISTRALAI_MISTRAL_LARGE_2407.id,
+    MISTRALAI_MISTRAL_LARGE_2512.id,
     MISTRALAI_MISTRAL_LARGE_2512_BATCH.id,
     MISTRALAI_MISTRAL_MEDIUM_3.id,
     MISTRALAI_MISTRAL_MEDIUM_3_5.id,
@@ -21320,9 +21907,7 @@ export const OPENROUTER_COMBINED_TOOLS_AND_SCHEMA_MODELS: ReadonlySet<string> =
     MOONSHOTAI_KIMI_K2_6.id,
     MOONSHOTAI_KIMI_K2_7_CODE.id,
     MOONSHOTAI_KIMI_K3.id,
-    NEX_AGI_NEX_N2_5_MINI_FREE.id,
-    NEX_AGI_NEX_N2_5_PRO.id,
-    NEX_AGI_NEX_N2_5_PRO_FREE.id,
+    MOONSHOTAI_KIMI_K3_BATCH.id,
     NVIDIA_NEMOTRON_3_NANO_30B_A3B.id,
     NVIDIA_NEMOTRON_3_SUPER_120B_A12B.id,
     NVIDIA_NEMOTRON_3_SUPER_120B_A12B_FREE.id,
@@ -21397,11 +21982,21 @@ export const OPENROUTER_COMBINED_TOOLS_AND_SCHEMA_MODELS: ReadonlySet<string> =
     OPENAI_GPT_6_ASTRA_PRO.id,
     OPENAI_GPT_6_ASTRA_PRO_BATCH.id,
     OPENAI_GPT_6_ASTRA_BATCH.id,
+    OPENAI_GPT_6_LUNA.id,
+    OPENAI_GPT_6_LUNA_PRO.id,
+    OPENAI_GPT_6_LUNA_PRO_BATCH.id,
+    OPENAI_GPT_6_LUNA_BATCH.id,
+    OPENAI_GPT_6_SOL.id,
+    OPENAI_GPT_6_SOL_PRO.id,
+    OPENAI_GPT_6_SOL_PRO_BATCH.id,
+    OPENAI_GPT_6_SOL_BATCH.id,
     OPENAI_GPT_AUDIO.id,
     OPENAI_GPT_AUDIO_MINI.id,
     OPENAI_GPT_CHAT_LATEST.id,
     OPENAI_GPT_OSS_120B.id,
+    OPENAI_GPT_OSS_120B_BATCH.id,
     OPENAI_GPT_OSS_20B.id,
+    OPENAI_GPT_OSS_20B_BATCH.id,
     OPENAI_GPT_OSS_SAFEGUARD_20B.id,
     OPENAI_O1.id,
     OPENAI_O3.id,
@@ -21413,6 +22008,7 @@ export const OPENROUTER_COMBINED_TOOLS_AND_SCHEMA_MODELS: ReadonlySet<string> =
     OPENAI_O4_MINI.id,
     OPENAI_O4_MINI_HIGH.id,
     OPENAI_O4_MINI_BATCH.id,
+    PERCEPTRON_PERCEPTRON_MK1_5.id,
     PRISM_ML_TERNARY_BONSAI_2_27B.id,
     QWEN_QWEN_2_5_72B_INSTRUCT.id,
     QWEN_QWEN_2_5_7B_INSTRUCT.id,
@@ -21458,6 +22054,8 @@ export const OPENROUTER_COMBINED_TOOLS_AND_SCHEMA_MODELS: ReadonlySet<string> =
     QWEN_QWEN3_8_27B_FREE.id,
     QWEN_QWEN3_8_FLASH.id,
     QWEN_QWEN3_8_MAX_0902.id,
+    QWEN_QWEN3_8_MAX_PRIME.id,
+    QWEN_QWEN3_8_OMNI_FLASH.id,
     REKAAI_REKA_EDGE.id,
     SAKANA_FUGU_MAX.id,
     SAKANA_FUGU_ULTRA.id,
@@ -21467,6 +22065,7 @@ export const OPENROUTER_COMBINED_TOOLS_AND_SCHEMA_MODELS: ReadonlySet<string> =
     STEPFUN_STEP_3_7_FLASH.id,
     TENCENT_HY3.id,
     TENCENT_HY4_PREVIEW.id,
+    UPSTAGE_SOLAR_MINI4.id,
     UPSTAGE_SOLAR_PRO_3.id,
     UPSTAGE_SOLAR_PRO4.id,
     X_AI_GROK_4_20.id,
@@ -21487,7 +22086,6 @@ export const OPENROUTER_COMBINED_TOOLS_AND_SCHEMA_MODELS: ReadonlySet<string> =
     Z_AI_GLM_5.id,
     Z_AI_GLM_5_1.id,
     Z_AI_GLM_5_2.id,
-    Z_AI_GLM_5_2_BATCH.id,
     Z_AI_GLM_5_3.id,
     Z_AI_GLM_5_3_FLASH.id,
     Z_AI_GLM_5_3_FLASH_BATCH.id,
